@@ -1,0 +1,17 @@
+body {
+  padding: 20px;
+  font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+.carousel-box {
+  display: flex;
+  justify-content: center;
+  margin: 90px; 
+}
+
+.carousel {
+  max-width: 400px; 
+}
