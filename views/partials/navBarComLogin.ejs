@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyShare</title>
+    <link rel="stylesheet" href="/stylesheets/navBarSemLogin.css">
+    <link rel="stylesheet" href="/stylesheets/menuLateral.css">  
+</head>
+
+<body>
+  <div class="menu">
+  <div class="logo-menu">
+  <img src="/images/logo.png" alt="logo">
+  </div>
+
+    <nav>
+
+        <ul>  
+
+          <li>
+            <button class="openbtn" onclick="openNav()">
+
+              <div class="botao-menu">
+              <img src="/images/botaoMenu.png" alt="botao">
+              </div>
+
+            </button>
+          </li>
+
+            <li>
+             <a href="/">Início</a>
+            </li>
+
+            <li>
+                <a href="/periodo/p1">P1 ▾</a>
+                <ul class="dropdown">
+                    <li>
+                      <a href="/disciplina/introProg">Introdução a Programação</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="/periodo/p2">P2 ▾</a>
+                <ul class="dropdown">
+                    <li>
+                      <a href="/disciplina/admso">Administração de Sistemas Operacionais</a>
+                    </li>
+                    <li>
+                      <a href="/disciplina/fundProg1">Fundamentos de Programação I</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="/periodo/p3">P3 ▾</a>
+                <ul class="dropdown">
+                    <li>
+                      <a href="/disciplina/fundProg2">Fundamentos de Programação II</a>
+                    </li>
+                    <li>
+                      <a href="/disciplina/poo">Programação Orientada a Objetos</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="/periodo/p4">P4 ▾</a>
+                <ul class="dropdown">
+                    <li>
+                      <a href="/disciplina/bd">Bancos de Dados</a>
+                    </li>
+                    <li>
+                      <a href="/disciplina/mfds">Métodos e Ferramentas para Desenvolvimento de Software</a>
+                    </li>
+                    <li>
+                      <a href="/disciplina/pp1">Prática Profissional I</a>
+                    </li>
+                    <li>
+                      <a href="/disciplina/progMoveis1">Programação de Dispositivos Móveis I</a>
+                    </li>
+                    <li>
+                      <a href="/disciplina/redes">Redes de Computadores</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="/periodo/p5">P5 ▾</a>
+                <ul class="dropdown">
+                    <li>
+                      <a href="/disciplina/eletroInfo">Eletrônica para Informática</a>
+                    </li>
+                    <li>
+                      <a href="/disciplina/pp2">Prática Profissional II</a>
+                    </li>
+                    <li>
+                      <a href="/disciplina/progMoveis2">Programação de Dispositivos Móveis II</a>
+                    </li>
+                    <li>
+                      <a href="/disciplina/progWeb1">Programação Web I</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="/periodo/p6">P6 ▾</a>
+                <ul class="dropdown">
+                    <li>
+                      <a href="/disciplina/introSegCiber">Introdução a Segurança Cibernética</a>
+                    </li>
+                    <li>
+                      <a href="/disciplina/pp3">Prática Profissional III</a>
+                    </li>
+                    <li>
+                      <a href="/disciplina/progWeb2">Programação Web II</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+            
+                <button class="openbtn" onclick="enviarMaterial()">
+
+                  <div class="botao-menu">
+                  <img src="/images/enviarMaterial.png" alt="botao">
+                  </div>
+
+                </button>
+                <button class="openbtn" onclick="notificacao()">
+
+                  <div class="botao-menu">
+                  <img src="/images/notificacao.png" alt="botao">
+                  </div>
+
+                </button>
+                <button class="openbtn" onclick="perfil()">
+
+                  <div class="botao-menu">
+                  <img src="/images/perfil.png" alt="botao">
+                  </div>
+
+                </button>
+
+            </li>
+
+        </ul>
+    </nav>
+
+  </div>
+
+  <!-- O menu lateral -->
+
+  <div id="mySidebar" class="sidebar">
+    <div class="menu-lateral">
+    <div class="logo-menu">
+    <img src="/images/logo.png" alt="logo">
+    </div>
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="barra-pesquisa">
+    <input type="text" id="myInput" onkeyup="filterFunction()" placeholder="Pesquisar disciplinas...">
+    </div>
+    <div class="lista" id="myLinks">
+      <a href="#">Introdução a Programação</a>
+      <a href="#">Administração de Sistemas Operacionais</a>
+      <a href="#">Fundamentos de Programação I</a>
+      <a href="#">Fundamentos de Programação II</a>
+      <a href="#">Programação Orientada a Objetos</a>
+      <a href="#">Bancos de Dados</a>
+      <a href="#">Métodos e Ferramentas para Desenvolvimento de Software</a>
+      <a href="#">Programação de Dispositivos Móveis I</a>
+      <a href="#">Prática Profissional I</a>
+      <a href="#">Redes de Computadores</a>
+      <a href="#">Eletrônica para Informática</a>
+      <a href="#">Prática Profissional II</a>
+      <a href="#">Programação de Dispositivos Móveis II</a>
+      <a href="#">Programação Web I</a>
+      <a href="#">Introdução a Segurança Cibernética</a>
+      <a href="#">Prática Profissional III</a>
+      <a href="#">Programação Web II</a>
+    </div>
+  </div>
+  </div>
+
+  <script src="/javascripts/menuLateral.js"></script>
+
+</body>
+</html>

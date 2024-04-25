@@ -1,0 +1,67 @@
+.rodape {
+    background: linear-gradient(to bottom, #373946, #102B62);
+    color: white;
+    font-size: 14px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+h4{
+  font-size: 15px;
+}
+
+.rodape-conteudo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 90%;
+    margin-top: 40px;
+    margin-left: 40px;
+    margin-right: 40px;
+
+}
+
+p {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.rodape-logo img{
+  margin-top: 50px;
+}
+
+.rodape a {
+    text-decoration: none;
+    color: white;
+}
+
+.redesSociais img {
+    width: 40px;
+    height: 40px;
+}
+
+.rodape-redesSociais {
+    align-self: flex-end;
+    margin-right: 20px;
+}
+
+.rodape-direitos {
+    align-self: flex-start;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.r-direitos {
+  list-style: none;
+  justify-content: space-between;
+  display: flex;
+  padding: 20px;
+}
+
+.direitos {
+    margin-right: 20px;
+}

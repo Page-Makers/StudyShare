@@ -1,0 +1,72 @@
+body{
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.container{
+  margin-top: 25px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 25px;
+}
+
+section{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.nome-periodo{
+  color: #424242;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  
+}
+
+.disciplinas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.disciplina {
+  text-align: center;
+  padding: 30px;
+
+}
+
+.disciplina img {
+  max-width: 100%;
+  height: auto;
+  width: 400px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 10px;
+  filter: brightness(0.7);
+  box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.disciplina:hover img {
+  filter: brightness(1);
+}
+
+a {
+    color: #191970;
+    text-decoration: none;
+    margin-top: 10px;
+    font-size: 18px;
+    font-family: Arial, sans-serif; 
+
+}
+
+a h5{
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+
+
+
+
+

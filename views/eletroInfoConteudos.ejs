@@ -1,0 +1,90 @@
+<link rel="stylesheet" href="/stylesheets/conteudo.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+  <%- include('./partials/navBarSemLogin.ejs') %>
+
+  <section>
+    <div class="container">
+      <div class="nome-disciplina" id="nome-da-disciplina">
+        <h3>Eletrônica para Informática</h3>
+      </div>
+
+      <div class="row">
+        <div class="col-md-7">
+          <div class="content-box first" id="main-content">
+            <div class="capa-disciplina">
+              <img src="/images/eletroInfo.jpg" alt="Eletrônica para Informática">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <div class="content-box second">
+
+            <div class="titulo-conteudo">
+              <h3>Conteúdos</h3>
+            </div>
+
+            <ul>
+              <li><a href="#" onclick="changeContent('Tensão e corrente CC e CA')">Tensão e corrente CC e CA</a></li>
+              <li><a href="#" onclick="changeContent('Multímetro')">Multímetro</a></li>
+              <li><a href="#" onclick="changeContent('Componentes e dispositivos eletrônicos: Fonte CC, Resistor, LED, Transistor, Relé, PWM, pequenos motores CC')">Componentes e dispositivos eletrônicos: Fonte CC, Resistor, LED, Transistor, Relé, PWM, pequenos motores CC</a></li>
+              <li><a href="#" onclick="changeContent('Aplicações com microcontroladores (Arduino, ESP ou similar)')">Aplicações com microcontroladores (Arduino, ESP ou similar)</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+      function changeContent(contentType) {
+        var contentBox = document.getElementById('main-content');
+
+        switch (contentType) {
+          case 'Tensão e corrente CC e CA':
+            contentBox.innerHTML = `
+              <h2>Tensão e corrente CC e CA</h2>
+              <p>Este tópico aborda os conceitos básicos de tensão e corrente em circuitos de corrente contínua (CC) e corrente alternada (CA), incluindo suas características e medições.</p>
+            `;
+            break;
+
+          case 'Multímetro':
+            contentBox.innerHTML = `
+              <h2>Multímetro</h2>
+              <p>O multímetro é uma ferramenta essencial para medição de grandezas elétricas como tensão, corrente e resistência. Nesta disciplina, os alunos aprenderão a utilizar o multímetro de forma eficaz para análise de circuitos eletrônicos.</p>
+            `;
+            break;
+
+          case 'Componentes e dispositivos eletrônicos: Fonte CC, Resistor, LED, Transistor, Relé, PWM, pequenos motores CC':
+            contentBox.innerHTML = `
+              <h2>Componentes e dispositivos eletrônicos</h2>
+              <p>Este tópico aborda uma variedade de componentes e dispositivos eletrônicos comumente encontrados em circuitos eletrônicos, incluindo fontes de alimentação CC, resistores, LEDs, transistores, relés, controle de PWM (Pulse Width Modulation) e pequenos motores CC.</p>
+            `;
+            break;
+
+          case 'Aplicações com microcontroladores (Arduino, ESP ou similar)':
+            contentBox.innerHTML = `
+              <h2>Aplicações com microcontroladores</h2>
+              <p>Os microcontroladores, como Arduino, ESP8266 e outros, são amplamente utilizados para desenvolvimento de projetos eletrônicos. Nesta disciplina, os alunos aprenderão a realizar diversas aplicações práticas utilizando microcontroladores, como controle de dispositivos, automação residencial, e muito mais.</p>
+            `;
+            break;
+
+          default:
+            break;
+        }
+      }
+    </script>
+  </section>
+
+  <footer><%- include('./partials/footer.ejs') %></footer>
+
+</body>
+
+</html>

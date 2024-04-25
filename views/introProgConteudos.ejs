@@ -1,0 +1,94 @@
+<link rel="stylesheet" href="/stylesheets/conteudo.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+  <%- include('./partials/navBarSemLogin.ejs') %>
+
+  <section>
+    <div class="container">
+      <div class="nome-disciplina" id="nome-da-disciplina">
+        <h3>Introdução a Programação</h3>
+      </div>
+
+      <div class="row">
+        <div class="col-md-7">
+          <div class="content-box first" id="main-content">
+            <div class="capa-disciplina">
+              <img src="/images/introProg.jpg" alt="Programação e Lógica Computacional">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <div class="content-box second">
+
+            <div class="titulo-conteudo">
+              <h3>Conteúdos</h3>
+            </div>
+
+            <ul>
+              <li><a href="#" onclick="changeContent('Conceito de sistema computacional')">Conceito de sistema computacional</a></li>
+              <li><a href="#" onclick="changeContent('Princípios de lógica computacional e pseudolinguagem')">Princípios de lógica computacional e pseudolinguagem</a></li>
+              <li><a href="#" onclick="changeContent('Conceitos de programação: variáveis, constantes, estruturas de repetição e estruturas de decisão')">Conceitos de programação: variáveis, constantes, estruturas de repetição e estruturas de decisão</a></li>
+              <li><a href="#" onclick="changeContent('Operadores aritméticos, de comparação, lógicos e de manipulação de bits')">Operadores aritméticos, de comparação, lógicos e de manipulação de bits</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+      function changeContent(contentType) {
+        var contentBox = document.getElementById('main-content');
+
+        switch (contentType) {
+          case 'Conceito de sistema computacional':
+            contentBox.innerHTML = `
+              <h2>Conceito de sistema computacional</h2>
+              <p>Um sistema computacional é um conjunto de hardware, software e dados que trabalham juntos para realizar tarefas específicas. Ele inclui componentes como processadores, memória, dispositivos de entrada/saída e sistemas operacionais.</p>
+              <p>Esses sistemas são projetados para processar informações de entrada, executar algoritmos e produzir saídas úteis para os usuários. Eles podem variar em tamanho e complexidade, desde sistemas embarcados simples até grandes mainframes e data centers.</p>
+            `;
+            break;
+
+          case 'Princípios de lógica computacional e pseudolinguagem':
+            contentBox.innerHTML = `
+              <h2>Princípios de lógica computacional e pseudolinguagem</h2>
+              <p>A lógica computacional é o estudo das regras formais e princípios de raciocínio utilizados na computação. Ela inclui conceitos como proposições, conectivos lógicos e inferência lógica.</p>
+              <p>A pseudolinguagem é uma linguagem simplificada usada para expressar algoritmos e procedimentos de forma clara e concisa. Ela não segue uma sintaxe específica de nenhuma linguagem de programação, mas permite descrever a lógica por trás de um algoritmo de maneira compreensível.</p>
+            `;
+            break;
+
+          case 'Conceitos de programação: variáveis, constantes, estruturas de repetição e estruturas de decisão':
+            contentBox.innerHTML = `
+              <h2>Conceitos de programação: variáveis, constantes, estruturas de repetição e estruturas de decisão</h2>
+              <p>Na programação, as variáveis são usadas para armazenar dados que podem ser manipulados e processados pelo programa. As constantes, por outro lado, são valores fixos que não mudam durante a execução do programa.</p>
+              <p>As estruturas de repetição, como loops, permitem que o programa execute uma sequência de instruções várias vezes com base em uma condição específica. Já as estruturas de decisão, como if-else e switch-case, permitem que o programa tome decisões com base em condições lógicas.</p>
+            `;
+            break;
+
+          case 'Operadores aritméticos, de comparação, lógicos e de manipulação de bits':
+            contentBox.innerHTML = `
+              <h2>Operadores aritméticos, de comparação, lógicos e de manipulação de bits</h2>
+              <p>Os operadores aritméticos são usados para realizar operações matemáticas, como adição, subtração, multiplicação e divisão. Os operadores de comparação são usados para comparar valores e produzir resultados verdadeiros ou falsos.</p>
+              <p>Os operadores lógicos, como AND, OR e NOT, são usados para combinar expressões booleanas e produzir resultados lógicos. Os operadores de manipulação de bits, como shift e bitwise, são usados para realizar operações em nível de bit em valores numéricos.</p>
+            `;
+            break;
+
+          default:
+            break;
+        }
+      }
+    </script>
+  </section>
+
+  <footer><%- include('./partials/footer.ejs') %></footer>
+
+</body>
+
+</html>

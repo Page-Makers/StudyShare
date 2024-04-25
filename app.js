@@ -4,15 +4,15 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var entrarRouter = require('./routes/entrar');
-var p1Router = require('./routes/p1');
-var p2Router = require('./routes/p2');
-var p3Router = require('./routes/p3');
-var p4Router = require('./routes/p4');
-var p5Router = require('./routes/p5');
-var p6Router = require('./routes/p6');
+
+var indexRouter = require('./routes/index'); //rota página inicial "index"
+var usersRouter = require('./routes/users'); //rota users
+var entrarRouter = require('./routes/entrar'); //rota login
+var periodoRouter = require('./routes/periodo'); //rotas dos períodos
+var disciplinaRouter = require('./routes/disciplina'); //rota das disciplinas
+var conteudosRouter = require('./routes/conteudos'); //rota dos conteúdo
+var avaliacoesRouter = require('./routes/avaliacoes'); //rota das avaliações
+var perfilRouter = require('./routes/perfil'); //rota do perfil
 
 
 var app = express();
@@ -27,16 +27,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/entrar', entrarRouter);
-app.use('/p1', p1Router);
-app.use('/p2', p2Router);
-app.use('/p3', p3Router);
-app.use('/p4', p4Router);
-app.use('/p5', p5Router);
-app.use('/p6', p6Router);
-
+app.use('/', indexRouter); //página inicial "index"
+app.use('/users', usersRouter); //users
+app.use('/entrar', entrarRouter); //login
+app.use('/periodo', periodoRouter); //períodos
+app.use('/disciplina', disciplinaRouter); //disciplinas
+app.use('/conteudos', conteudosRouter); //conteúdos
+app.use('/avaliacoes', avaliacoesRouter); //avaliações
+app.use('/perfil', perfilRouter); //perfil
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,0 +1,98 @@
+<link rel="stylesheet" href="/stylesheets/conteudo.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+  <%- include('./partials/navBarSemLogin.ejs') %>
+
+  <section>
+    <div class="container">
+      <div class="nome-disciplina" id="nome-da-disciplina">
+        <h3>Administraçaõ de Sistemas Operacionais</h3>
+      </div>
+
+      <div class="row">
+        <div class="col-md-7">
+          <div class="content-box first" id="main-content">
+            <div class="capa-disciplina">
+              <img src="/images/admso.jpg" alt="Sistemas Operacionais">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <div class="content-box second">
+
+            <div class="titulo-conteudo">
+              <h3>Conteúdos</h3>
+            </div>
+
+            <ul>
+              <li><a href="#" onclick="changeContent('Conceitos básicos de sistemas operacionais e relação com hardware')">Conceitos básicos de sistemas operacionais e relação com hardware</a></li>
+              <li><a href="#" onclick="changeContent('Gerenciamento de processos')">Gerenciamento de processos</a></li>
+              <li><a href="#" onclick="changeContent('Gerenciamento de memória')">Gerenciamento de memória</a></li>
+              <li><a href="#" onclick="changeContent('Implantação de sistemas operacionais: instalação, configuração, customização e distribuição')">Implantação de sistemas operacionais: instalação, configuração, customização e distribuição</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+      function changeContent(contentType) {
+        var contentBox = document.getElementById('main-content');
+
+        switch (contentType) {
+          case 'Conceitos básicos de sistemas operacionais e relação com hardware':
+            contentBox.innerHTML = `
+              <h2>Conceitos básicos de sistemas operacionais e relação com hardware</h2>
+              <p>Os sistemas operacionais são programas que atuam como intermediários entre o hardware de um computador e os programas de aplicação. Eles fornecem uma interface para que os usuários interajam com o hardware e executem tarefas de forma eficiente.</p>
+              <p>Esses sistemas gerenciam recursos como processadores, memória, dispositivos de armazenamento e entrada/saída, garantindo que eles sejam utilizados de forma adequada pelos programas em execução.</p>
+              <p>Por exemplo, um sistema operacional como o Windows ou o Linux controla como os programas podem acessar os recursos do computador, garantindo que várias aplicações possam ser executadas simultaneamente sem interferir umas com as outras.</p>
+            `;
+            break;
+
+          case 'Gerenciamento de processos':
+            contentBox.innerHTML = `
+              <h2>Gerenciamento de processos</h2>
+              <p>O gerenciamento de processos é uma das principais funções de um sistema operacional. Ele envolve a criação, execução, suspensão e terminação de processos, que são programas em execução.</p>
+              <p>Um processo é uma instância de um programa em execução, e o sistema operacional é responsável por atribuir recursos a esses processos, como tempo de CPU, memória e dispositivos de entrada/saída.</p>
+              <p>O gerenciamento de processos garante que múltiplos programas possam ser executados de forma concorrente e que cada processo seja executado de maneira justa e eficiente.</p>
+            `;
+            break;
+
+          case 'Gerenciamento de memória':
+            contentBox.innerHTML = `
+              <h2>Gerenciamento de memória</h2>
+              <p>O gerenciamento de memória é responsável por alocar e liberar memória para os processos em execução. Ele garante que cada processo tenha acesso à quantidade necessária de memória para executar suas tarefas de forma eficiente.</p>
+              <p>Isso inclui técnicas como paginação, segmentação e swapping, que permitem que o sistema operacional gerencie a memória física disponível de forma otimizada e transparente para os programas em execução.</p>
+              <p>Um bom gerenciamento de memória é essencial para evitar problemas como vazamentos de memória e falta de memória, que podem levar a falhas no sistema e perda de desempenho.</p>
+            `;
+            break;
+
+          case 'Implantação de sistemas operacionais: instalação, configuração, customização e distribuição':
+            contentBox.innerHTML = `
+              <h2>Implantação de S.O: instalação, configuração, customização e distribuição</h2>
+              <p>A implantação de sistemas operacionais envolve a instalação, configuração, customização e distribuição de sistemas operacionais em computadores e dispositivos.</p>
+              <p>Isso pode incluir etapas como a instalação do sistema operacional a partir de mídia de instalação, a configuração de opções de inicialização e segurança, a personalização da interface do usuário e a distribuição de imagens do sistema para vários dispositivos.</p>
+              <p>Uma implantação bem-sucedida de um sistema operacional é fundamental para garantir que os computadores e dispositivos funcionem corretamente e atendam às necessidades dos usuários e das organizações.</p>
+            `;
+            break;
+
+          default:
+            break;
+        }
+      }
+    </script>
+  </section>
+
+  <footer><%- include('./partials/footer.ejs') %></footer>
+
+</body>
+
+</html>

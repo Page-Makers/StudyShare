@@ -1,0 +1,106 @@
+<link rel="stylesheet" href="/stylesheets/conteudo.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+  <%- include('./partials/navBarSemLogin.ejs') %>
+
+  <section>
+    <div class="container">
+      <div class="nome-disciplina" id="nome-da-disciplina">
+        <h3>Programação Web II</h3>
+      </div>
+
+      <div class="row">
+        <div class="col-md-7">
+          <div class="content-box first" id="main-content">
+            <div class="capa-disciplina">
+              <img src="/images/progWeb2.jpg" alt="Programação Web II">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <div class="content-box second">
+
+            <div class="titulo-conteudo">
+              <h3>Conteúdos</h3>
+            </div>
+
+            <ul>
+              <li><a href="#" onclick="changeContent('Introdução a Content Management System (CMS)')">Introdução a Content Management System (CMS)</a></li>
+              <li><a href="#" onclick="changeContent('Construção de Aplicações com CMS')">Construção de Aplicações com CMS</a></li>
+              <li><a href="#" onclick="changeContent('Linguagem JavaScript para construção de aplicações front-end')">Linguagem JavaScript para construção de aplicações front-end</a></li>
+              <li><a href="#" onclick="changeContent('JQuery')">JQuery</a></li>
+              <li><a href="#" onclick="changeContent('React Native')">React Native</a></li>
+              <li><a href="#" onclick="changeContent('Projeto Final')">Projeto Final</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+      function changeContent(contentType) {
+        var contentBox = document.getElementById('main-content');
+
+        switch (contentType) {
+          case 'Introdução a Content Management System (CMS)':
+            contentBox.innerHTML = `
+              <h2>Introdução a Content Management System (CMS)</h2>
+              <p>Este tópico aborda os conceitos fundamentais de sistemas de gerenciamento de conteúdo (CMS), incluindo suas características, funcionalidades e benefícios. Também explora diferentes plataformas e soluções CMS disponíveis no mercado.</p>
+            `;
+            break;
+
+          case 'Construção de Aplicações com CMS':
+            contentBox.innerHTML = `
+              <h2>Construção de Aplicações com CMS</h2>
+              <p>Neste tópico, os alunos aprenderão a construir aplicações web utilizando sistemas de gerenciamento de conteúdo (CMS), explorando recursos como criação de páginas, gerenciamento de conteúdo, personalização de temas e extensões.</p>
+            `;
+            break;
+
+          case 'Linguagem JavaScript para construção de aplicações front-end':
+            contentBox.innerHTML = `
+              <h2>Linguagem JavaScript para construção de aplicações front-end</h2>
+              <p>A linguagem JavaScript é essencial para o desenvolvimento de aplicações web front-end interativas e dinâmicas. Neste tópico, os alunos aprenderão os fundamentos da linguagem JavaScript e como utilizá-la para manipular elementos da página, realizar validações e interações do usuário.</p>
+            `;
+            break;
+
+          case 'JQuery':
+            contentBox.innerHTML = `
+              <h2>JQuery</h2>
+              <p>O JQuery é uma biblioteca JavaScript amplamente utilizada para simplificar a interação com o DOM HTML, manipulação de eventos, animações e requisições AJAX. Neste tópico, os alunos aprenderão os conceitos básicos e avançados do JQuery e como aplicá-lo no desenvolvimento de aplicações web.</p>
+            `;
+            break;
+
+          case 'React Native':
+            contentBox.innerHTML = `
+              <h2>React Native</h2>
+              <p>O React Native é um framework para desenvolvimento de aplicações móveis multiplataforma utilizando JavaScript e React. Neste tópico, os alunos aprenderão a construir aplicativos nativos para iOS e Android com React Native, compartilhando código entre as plataformas e aproveitando os recursos nativos do dispositivo.</p>
+            `;
+            break;
+
+          case 'Projeto Final':
+            contentBox.innerHTML = `
+              <h2>Projeto Final</h2>
+              <p>O Projeto Final é uma oportunidade para os alunos aplicarem os conhecimentos adquiridos ao longo do curso no desenvolvimento de um projeto prático e relevante. Os alunos terão a liberdade de escolher o tema e as tecnologias a serem utilizadas, demonstrando suas habilidades e competências em programação web.</p>
+            `;
+            break;
+
+          default:
+            break;
+        }
+      }
+    </script>
+  </section>
+
+  <footer><%- include('./partials/footer.ejs') %></footer>
+
+</body>
+
+</html>

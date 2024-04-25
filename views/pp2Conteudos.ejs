@@ -1,0 +1,91 @@
+
+  <link rel="stylesheet" href="/stylesheets/conteudo.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+  <%- include('./partials/navBarSemLogin.ejs') %>
+
+  <section>
+    <div class="container">
+      <div class="nome-disciplina" id="nome-da-disciplina">
+        <h3>Prática Profissional II</h3>
+      </div>
+
+      <div class="row">
+        <div class="col-md-7">
+          <div class="content-box first" id="main-content">
+            <div class="capa-disciplina">
+              <img src="/images/pp2.jpg" alt="Prática Profissional II">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <div class="content-box second">
+
+            <div class="titulo-conteudo">
+              <h3>Conteúdos</h3>
+            </div>
+
+            <ul>
+              <li><a href="#" onclick="changeContent('Integração dos conhecimentos das disciplinas Programação de Dispositivos Móveis 1 (MOVEIS 1), Programação de Dispositivos Móveis 2 (MOVEIS 2) e Programação Web 1 (WEB1)')">Integração dos conhecimentos das disciplinas Programação de Dispositivos Móveis 1 (MOVEIS 1), Programação de Dispositivos Móveis 2 (MOVEIS 2) e Programação Web 1 (WEB1)</a></li>
+              <li><a href="#" onclick="changeContent('Revisão de conteúdos')">Revisão de conteúdos</a></li>
+              <li><a href="#" onclick="changeContent('Construção de protótipos')">Construção de protótipos</a></li>
+              <li><a href="#" onclick="changeContent('Apresentação de protótipos')">Apresentação de protótipos</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+      function changeContent(contentType) {
+        var contentBox = document.getElementById('main-content');
+
+        switch (contentType) {
+          case 'Integração dos conhecimentos das disciplinas Programação de Dispositivos Móveis 1 (MOVEIS 1), Programação de Dispositivos Móveis 2 (MOVEIS 2) e Programação Web 1 (WEB1)':
+            contentBox.innerHTML = `
+              <h2>Integração dos conhecimentos</h2>
+              <p>Este tópico visa integrar os conhecimentos adquiridos nas disciplinas de Programação de Dispositivos Móveis 1, Programação de Dispositivos Móveis 2 e Programação Web 1, a fim de desenvolver habilidades abrangentes no desenvolvimento de aplicativos móveis e web.</p>
+            `;
+            break;
+
+          case 'Revisão de conteúdos':
+            contentBox.innerHTML = `
+              <h2>Revisão de conteúdos</h2>
+              <p>Nesta parte do curso, será realizada uma revisão abrangente dos principais conceitos e técnicas aprendidas ao longo das disciplinas anteriores, preparando os alunos para aplicá-los de forma eficaz em projetos práticos.</p>
+            `;
+            break;
+
+          case 'Construção de protótipos':
+            contentBox.innerHTML = `
+              <h2>Construção de protótipos</h2>
+              <p>Os alunos serão orientados na construção de protótipos de aplicativos móveis e web, utilizando as tecnologias e ferramentas aprendidas durante o curso, a fim de explorar ideias e testar conceitos antes da implementação final.</p>
+            `;
+            break;
+
+          case 'Apresentação de protótipos':
+            contentBox.innerHTML = `
+              <h2>Apresentação de protótipos</h2>
+              <p>Nesta etapa, os alunos apresentarão seus protótipos de aplicativos móveis e web, demonstrando suas funcionalidades e design, e recebendo feedbacks construtivos da turma e do professor para possíveis melhorias.</p>
+            `;
+            break;
+
+          default:
+            break;
+        }
+      }
+    </script>
+  </section>
+
+  <footer><%- include('./partials/footer.ejs') %></footer>
+
+</body>
+
+</html>

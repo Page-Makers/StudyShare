@@ -1,0 +1,182 @@
+<link rel="stylesheet" href="/stylesheets/conteudo.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+
+<%- include('./partials/navBarSemLogin.ejs') %>
+
+<body>
+<section>
+  
+<div class="container">
+  
+    <div class="nome-disciplina" id="nome-da-disciplina">
+      <h3>Programação Orientada a Objetos</h3>
+    </div>
+    
+  <div class="row">
+      <div class="col-md-7">
+        <div class="content-box first" id="main-content">
+          <div class="capa-disciplina">
+            <img src="/images/poo.jpg" alt="poo">
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-5">
+        <div class="content-box second">
+          
+          <div class="titulo-conteudo">
+            <h3>Conteúdos</h3>
+           </div>
+          
+            <ul>
+              <li><a href="#" onclick="changeContent('Java')">Java</a></li>
+              <li><a href="#" onclick="changeContent('Introdução à orientação a objetos')">Introdução à orientação a objetos</a></li>
+              <li><a href="#" onclick="changeContent('Conversão de tipos')">Conversão de tipos</a></li>
+              <li><a href="#" onclick="changeContent('Definições de Classe')">Definições de Classe</a></li>
+              <li><a href="#" onclick="changeContent('Instâncias de classes')">Instâncias de classes</a></li>
+              <li><a href="#" onclick="changeContent('Construtores, métodos e atributos')">Construtores, métodos e atributos</a></li>
+              <li><a href="#" onclick="changeContent('Diferenças e aplicações de métodos de classe e instância')">Diferenças e aplicações de métodos de classe e instância</a></li>
+              <li><a href="#" onclick="changeContent('Modificadores de acesso')">Modificadores de acesso</a></li>
+              <li><a href="#" onclick="changeContent('Aplicação de herança')">Aplicação de herança</a></li>
+              <li><a href="#" onclick="changeContent('Sobrecarga e sobrescrita de métodos')">Sobrecarga e sobrescrita de métodos</a></li>
+              <li><a href="#" onclick="changeContent('Polimorfismo')">Polimorfismo</a></li>
+              <li><a href="#" onclick="changeContent('Interfaces')">Interfaces</a></li>
+              <li><a href="#" onclick="changeContent('Tratamento de exceções')">Tratamento de exceções</a></li>
+            </ul>
+        </div>
+    </div>
+      
+  </div>
+</div>
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  
+  <script>
+  function changeContent(contentType) {
+    var contentBox = document.getElementById('main-content');
+        
+        switch (contentType) {
+        case 'Java':
+          contentBox.innerHTML = `
+            <h2>Java</h2>
+            <p>Java é uma linguagem de programação amplamente utilizada, conhecida por sua portabilidade e orientação a objetos. É usada em uma variedade de aplicações, desde desenvolvimento web até aplicações móveis e sistemas empresariais.</p>
+            <p>Por exemplo, desenvolver um aplicativo de gerenciamento de tarefas em Java, onde as classes 'Tarefa' e 'ListaTarefas' podem ser usadas para organizar e manipular informações sobre as tarefas.</p>
+          `;
+          break;
+
+        case 'Introdução à orientação a objetos':
+          contentBox.innerHTML = `
+            <h2>Introdução à Orientação a Objetos</h2>
+            <p>A orientação a objetos é um paradigma de programação que se baseia na ideia de objetos que contêm dados e métodos que operam nesses dados. Isso promove o encapsulamento, a modularidade e a reutilização de código.</p>
+            <p>Por exemplo, em um sistema de gerenciamento de biblioteca, cada livro pode ser representado como um objeto com atributos como título, autor e número de páginas, além de métodos para empréstimo e devolução.</p>
+          `;
+          break;
+
+        case 'Conversão de tipos':
+          contentBox.innerHTML = `
+            <h2>Conversão de Tipos</h2>
+            <p>A conversão de tipos é o processo de converter um tipo de dado em outro. Isso pode ser necessário em situações como atribuir um valor de um tipo a uma variável de outro tipo ou passar argumentos para funções que esperam tipos específicos.</p>
+            <p>Por exemplo, converter um número em uma string em JavaScript usando o método toString(), ou converter uma string em um número usando parseInt() ou parseFloat().</p>
+          `;
+          break;
+
+        case 'Definições de Classe':
+          contentBox.innerHTML = `
+            <h2>Definições de Classe</h2>
+            <p>Uma classe é um modelo ou estrutura que define os atributos e comportamentos comuns a um grupo de objetos. Ela serve como um plano para criar objetos que compartilham características semelhantes.</p>
+            <p>Por exemplo, uma classe 'Carro' pode definir atributos como 'marca' e 'modelo', e métodos como 'ligar()' e 'desligar()', que serão compartilhados por todos os objetos do tipo 'Carro'.</p>
+          `;
+          break;
+
+        case 'Instâncias de classes':
+          contentBox.innerHTML = `
+            <h2>Instâncias de Classes</h2>
+            <p>As instâncias de classes são objetos individuais criados a partir de uma classe específica. Cada instância possui seus próprios valores para os atributos da classe e pode invocar os métodos definidos na classe.</p>
+            <p>Por exemplo, ao criar um objeto 'meuCarro' a partir da classe 'Carro', estamos criando uma instância única com seus próprios valores para os atributos 'marca' e 'modelo', além de poder chamar os métodos da classe, como 'ligar()' e 'desligar()'.</p>
+          `;
+          break;
+
+        case 'Construtores, métodos e atributos':
+          contentBox.innerHTML = `
+            <h2>Construtores, Métodos e Atributos</h2>
+            <p>Construtores são métodos especiais usados para inicializar objetos quando eles são criados. Eles podem aceitar parâmetros para configurar o estado inicial do objeto.</p>
+            <p>Métodos são funções definidas dentro de uma classe que especificam o comportamento dos objetos dessa classe. Atributos são variáveis associadas a um objeto que representam seu estado.</p>
+            <p>Por exemplo, uma classe 'Carro' pode ter um construtor para definir a marca e o modelo do carro, métodos para ligar e desligar o carro, e atributos como cor e ano de fabricação.</p>
+          `;
+          break;
+
+        case 'Diferenças e aplicações de métodos de classe e instância':
+          contentBox.innerHTML = `
+            <h2>Diferenças e Aplicações de Métodos de Classe e Instância</h2>
+            <p>Os métodos de classe são aqueles que pertencem à classe em si e são compartilhados por todas as instâncias da classe. Eles geralmente são usados para operações que não dependem do estado específico do objeto.</p>
+            <p>Os métodos de instância, por outro lado, são métodos específicos de cada instância e podem acessar e manipular os atributos individuais do objeto.</p>
+            <p>Por exemplo, um método de classe em uma classe 'Círculo' poderia ser usado para calcular a área de todos os círculos, enquanto um método de instância poderia calcular a área de um círculo específico com base em seu raio.</p>
+          `;
+          break;
+
+        case 'Modificadores de acesso':
+          contentBox.innerHTML = `
+            <h2>Modificadores de Acesso</h2>
+            <p>Os modificadores de acesso são palavras-chave usadas em linguagens de programação orientadas a objetos para controlar o acesso aos membros de uma classe, como atributos e métodos.</p>
+            <p>Os principais modificadores de acesso são 'public', 'private' e 'protected', que determinam se os membros podem ser acessados por outras classes e em que contexto.</p>
+          `;
+          break;
+
+        case 'Aplicação de herança':
+          contentBox.innerHTML = `
+            <h2>Aplicação de Herança</h2>
+            <p>A herança é um conceito fundamental na programação orientada a objetos, onde uma classe pode herdar atributos e métodos de outra classe pai. Isso promove a reutilização de código e a criação de uma hierarquia de classes.</p>
+            <p>Por exemplo, em um sistema de herança de veículos, a classe 'Veículo' pode ser a classe pai de 'Carro' e 'Moto', onde ambos herdam características como 'marca' e 'modelo' da classe 'Veículo'.</p>
+          `;
+          break;
+
+            case 'Sobrecarga e sobrescrita de métodos':
+            contentBox.innerHTML = `
+              <h2>Sobrecarga e Sobrescrita de Métodos</h2>
+              <p>A sobrecarga de métodos permite definir múltiplas versões de um método com o mesmo nome, mas com parâmetros diferentes. Isso permite que um método se comporte de maneiras diferentes dependendo dos argumentos passados para ele.</p>
+              <p>A sobrescrita de métodos, por outro lado, ocorre quando uma classe filha redefine um método que já foi definido em sua classe pai. Isso permite que a classe filha forneça uma implementação específica do método que substitui a implementação da classe pai.</p>
+              <p>Por exemplo, em uma hierarquia de classes de formas geométricas, a classe pai 'Forma' pode ter um método 'calcularÁrea()', e as classes filhas 'Quadrado' e 'Círculo' podem sobrescrever esse método para calcular a área de acordo com suas formas específicas.</p>
+              <p>Esses conceitos são importantes para adaptar o comportamento dos métodos às necessidades específicas de cada classe em uma hierarquia de herança.</p>
+            `;
+            break;
+
+
+
+              case 'Polimorfismo':
+                contentBox.innerHTML = `
+                  <h2>Polimorfismo</h2>
+                  <p>O polimorfismo permite que um método tenha diferentes implementações com base no tipo de objeto que o invoca. Isso promove a flexibilidade e extensibilidade do código.</p>
+                  <p>Por exemplo, em um sistema de animais, o método 'emitirSom()' pode se comportar de maneiras diferentes para diferentes tipos de animais, produzindo sons específicos para cães, gatos e pássaros.</p>
+                `;
+                break;
+              
+              case 'Interfaces':
+                contentBox.innerHTML = `
+                  <h2>Interfaces</h2>
+                  <p>Interfaces são contratos que definem um conjunto de métodos que uma classe deve implementar. Elas permitem a criação de código mais flexível e modular, permitindo que diferentes classes compartilhem um comportamento comum.</p>
+                  <p>Por exemplo, em um sistema de pagamento, uma interface 'Pagável' pode definir um método 'pagar()' que é implementado por diferentes classes de forma específica, como 'CartaoCredito', 'CartaoDebito', etc.</p>
+                `;
+                break;
+              
+              case 'Tratamento de exceções':
+                contentBox.innerHTML = `
+                  <h2>Tratamento de Exceções</h2>
+                  <p>O tratamento de exceções é usado para lidar com situações excepcionais durante a execução do programa, como erros de divisão por zero ou acesso a índices inválidos em arrays.</p>
+                  <p>Por exemplo, ao dividir um número por zero em um cálculo matemático, o tratamento de exceções pode capturar o erro e exibir uma mensagem adequada ao usuário, evitando a interrupção do programa.</p>
+                `;
+                break;
+
+        
+      default:
+        break;
+    }
+  }
+</script>
+</section>
+  <footer><%- include('./partials/footer.ejs') %></footer>
+
+</body>
+</html>
