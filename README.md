@@ -113,7 +113,8 @@ git clone https://github.com/Page-Makers/StudyShare.git<br><br>
 cd studyshare<br><br>
 4. Instale as dependências do projeto:<br>
 npm install<br><br>
-5. Execute o projeto:<br>
+5. Execute os comandos:<br>
+node app.js<br>
 npm start<br><br>
 
 O projeto será executado localmente e você poderá acessá-lo em seu navegador no endereço `http://localhost:3000`.<br>
@@ -128,12 +129,14 @@ https://github.com/Page-Makers/StudyShare<br><br>
 2. No canto superior direito da página do repositório, clique no botão "Code".<br><br>
 3. Em seguida, clique em "Download ZIP".<br><br>
 4. Após o download, extraia o arquivo ZIP para a pasta de sua escolha no seu computador.<br><br>
-5. Abra o terminal ou prompt de comando.<br><br>
-6. Navegue até o diretório onde você extraiu os arquivos do projeto usando o comando cd, por exemplo:<br>
-cd caminho/para/o/diretorio/StudyShare<br><br>
-7. Execute o comando abaixo para instalar as dependências do projeto:<br>
+5. Abra o VSCode<br><br>
+6. Abra a pasta do projeto:<br>
+7. Abra o terminal do VSCode clicando em:
+   ctrl '<br><br>
+8.Execute o comando abaixo para instalar as dependências do projeto:<br>
 npm install<br><br>
-8. Após a instalação das dependências, execute o comando<br>
+10. Após a instalação das dependências, execute os comando<br>
+node app.js<br>
 npm start<br><br>
 
 O projeto será executado localmente e você poderá acessá-lo em seu navegador no endereço `http://localhost:3000`.<br>
