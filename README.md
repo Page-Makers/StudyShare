@@ -129,7 +129,7 @@ https://github.com/Page-Makers/StudyShare<br><br>
 2. No canto superior direito da página do repositório, clique no botão "Code".<br><br>
 3. Em seguida, clique em "Download ZIP".<br><br>
 4. Após o download, extraia o arquivo ZIP para a pasta de sua escolha no seu computador.<br><br>
-5. Abra o VSCode<br><br><br>
+5. Abra o VSCode<br><br>
 6. Abra a pasta do projeto<br><br>
 7. Abra o terminal do VSCode clicando em:
    ctrl '<br><br>
