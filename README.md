@@ -1,5 +1,5 @@
 <div  align="center">
-<img src="https://github.com/Page-Makers/StudyShare/blob/main/Design/Logo/Logo/Vers%C3%A3o%201/Logo.png"  height= "550px" width="1500px"/><br><br>
+<img src="https://github.com/Page-Makers/StudyShare/blob/main/Design/Logo/Logo/Vers%C3%A3o%201/Logo.png"  height= "550px" width="550px"/><br><br>
 </div>
 <section>
 <h2>🔎 Sobre o Projeto</h2>
