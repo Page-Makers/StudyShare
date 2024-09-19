@@ -1,0 +1,313 @@
+html, body {
+margin: 0;
+padding: 0;
+height: 100%;
+font-family: Arial, sans-serif;
+}
+
+.container {
+display: flex;
+min-height: 100vh;
+}
+
+.lado-esquerdo {
+position: relative;
+width: 50%;
+overflow: hidden;
+background-color: #102B62;
+}
+
+.logo {
+top: 10px;
+left: 10px;
+position: absolute;
+}
+
+.logo img {
+max-width: 35%; 
+height: auto; 
+margin: 0;
+display: flex;
+justify-content: left;
+align-items: left;
+padding: 10px;
+}
+
+.video-container {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+
+.video-background {
+min-width: 100%;
+min-height: 100%;
+width: auto;
+height: auto;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+filter: brightness(0.8);
+
+}
+
+.conteudo-lado-esquerdo {
+position: relative;
+z-index: 1;
+color: #fff;
+text-align: center;
+padding: 20px;
+}
+
+.lado-direito {
+background-color: #fff;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 20px;
+flex: 1;
+}
+
+.login-form {
+max-width: 300px;
+width: 100%;
+text-align: center;
+}
+
+.login-form input {
+width: 100%;
+margin-bottom: 10px;
+padding: 10px;
+box-sizing: border-box;
+border-radius: 5px;
+border: 1px solid #424242;
+}
+
+.login-form input:focus {
+outline: none;
+border: 2px solid #102B62;
+}
+
+.login-form button {
+width: 100%;
+margin-bottom: 10px;
+padding: 10px;
+border: none;
+cursor: pointer;
+border-radius: 5px;
+background-color: #102B62;
+color: #fff;
+box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.login-form button:hover {
+background-color: #1273f3;
+}
+
+.login-form .login-opcoes {
+margin-bottom: 10px;
+}
+
+.login-opcoes button {
+display: flex;
+align-items: center;
+justify-content: flex-start;
+background-color: #cfcfcf;
+color: #000000;
+text-align: center;
+}
+
+.opcao-image img {
+width: 15px; 
+margin-right: 5px;
+border-radius: 1px;
+margin-right: 15px;
+}
+
+.login-opcoes button p {
+text-align: center; 
+margin: 0; 
+line-height: 20px;
+}
+
+.login-opcoes button:hover {
+background-color: #1273f3;
+color: #ffffff;
+}
+
+.login-form a {
+text-decoration: none;
+color: #1273f3;
+font-size: 14px;
+}
+
+.login-form a:hover {
+text-decoration: underline;
+}
+
+.login-form h3 {
+font-family: Arial, sans-serif;
+padding: 5px;
+}
+
+.criar-conta p {
+font-size: 13px;
+margin-top: 20px;
+}
+
+.login-form button a{
+text-decoration:none;
+color:white;
+}
+
+.termos {
+font-size: 10px;
+color: #424242;
+}
+
+.termos a {
+font-size: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+.container {
+flex-direction: column;
+}
+.lado-esquerdo, .lado-direito {
+flex: 1; 
+width: 100%;
+padding: 10px;
+}
+}
+
+.voltar button {
+background: none;
+border: none;
+box-shadow: none;
+}
+
+.voltar img {
+width: 25px; 
+height: auto;
+}
+
+.voltar button:hover {
+border-radius: 50%;
+background-color: #e3e3e3ff;
+}
+
+.voltar {
+position: absolute;
+}
+
+.login-form {
+position: relative; 
+}
+
+
+/* Caminho de Navegação */
+.breadcrumb-container {
+padding: 15px 20px;
+background-color: #ffffff;
+border: 1px solid #ddd;
+border-radius: 8px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+margin-bottom: 20px;
+}
+
+.breadcrumb-container a {
+color: #3498db;
+text-decoration: none;
+font-size: 16px;
+font-weight: 500;
+transition: color 0.3s ease;
+}
+
+.breadcrumb-container a:hover {
+color: #2980b9;
+}
+
+.breadcrumb-container .separator {
+color: #999;
+margin: 0 8px;
+}
+
+.breadcrumb-container span {
+color: #333;
+}
+
+.breadcrumb-container::before {
+content: "\f053"; 
+font-family: "Font Awesome 5 Free";
+font-weight: 900;
+color: #999;
+margin-right: 8px;
+}
+
+.breadcrumb-container span:first-child::before {
+content: "";
+}
+
+.breadcrumb-container .current {
+font-weight: bold;
+color: #333;
+}
+
+@media (max-width: 768px) {
+.breadcrumb-container {
+padding: 10px 15px;
+font-size: 14px;
+}
+}
+
+.alert {
+display: none;
+padding: 15px;
+margin-bottom: 20px;
+border-radius: 5px;
+font-size: 16px;
+}
+
+.alert-success {
+background-color: #d4edda;
+color: #155724;
+border: 1px solid #c3e6cb;
+}
+
+.alert-danger {
+background-color: #f8d7da;
+color: #721c24;
+border: 1px solid #f5c6cb;
+}
+
+.error-message {
+background-color: #f8d7da;
+color: #721c24;
+border: 1px solid #f5c6cb;
+padding: 10px;
+margin-bottom: 15px;
+border-radius: 5px;
+}
+
+/* Estilo para a página de aviso */
+.login-form h3 {
+color: #102B62;
+}
+
+.login-form p {
+font-size: 16px;
+margin-bottom: 15px;
+}
+
+.login-form a {
+color: #1273f3;
+text-decoration: none;
+font-size: 16px;
+}
+
+.login-form a:hover {
+text-decoration: underline;
+}

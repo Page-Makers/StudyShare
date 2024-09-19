@@ -1,61 +1,342 @@
-<!-- teste tela principal 
-•criar rota de cada img após concluir menus
-•ajustar css externo,tam e adc ícones do carrossel
-•menu de cima está sendo feito
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Início</title>
 
-comando para inicializar : npm start  -->
+	<link rel="stylesheet" href="/stylesheets/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-  <!-- CSS externo -->
-  <link rel="stylesheet" href="./stylesheets/style.css">
-  <%- include('partials/navbar')%>
-</head>
-<body>
-  <h1>teste</h1>
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img class="d-block w-100" src="/images/P1img.jpg" alt="p1img">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="/images/P2img.jpg" alt="p2img">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="/images/P3img.jpg" alt="p3img">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="/images/P4img.jpg" alt="p4img">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="/images/P5img.jpg" alt="p5img">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="/images/P6img.jpg" alt="p6img">
-      </div>
-    </div>
-    <!-- Controles de navegação -->
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-      Anterior
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-      Próxima
-    </a>
-  </div>
-  <!-- Scripts JavaScript -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  <script>
-    $('.carousel').carousel({
-      interval: 5000 // Tempo em milissegundos de cada img 
-    });
-  </script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
 
+<!-- Menu Condicional -->
+<% if (user) { %>
+	<%- include('./partials/menuUsuario.ejs') %>
+<% } else { %>
+	<%- include('./partials/menu.ejs') %>
+<% } %>
+
+	<body>
+
+
+		<main class="container">
+				<div class="row align-items-center justify-content-center vh-100">
+						<div class="col-12 col-sm-7 text-center text-sm-left">
+								<h1 style="font-weight: bold;"class="mb-4 fw-bold custom-h1">Bem-vindo ao StudyShare!</h1>
+								<p style="font-weight: bold;" class="mb-4 custom-p">O Maior Acervo de Arquivos do Seu Curso.</p>
+								<a href="#discipline-scroll" class="btn btn-primary rounded-pill d-none d-sm-inline-block">Explorar Disciplinas</a>
+						</div>
+						<div class="col-12 col-sm-5 text-center">
+								<img src="/images/studyshareID.png" alt="Imagem de boas-vindas" class="img-fluid floating-image mb-4">
+								<a href="#discipline-scroll" class="btn btn-primary rounded-pill d-inline-block d-sm-none">Explorar Disciplinas</a>
+						</div>
+				</div>
+		</main>
+
+
+
+		<!--faz a rolagem até a parte do scroll ao apertar o explorar disciplinas-->
+		<script>
+				document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+						anchor.addEventListener('click', function(e) {
+								e.preventDefault();
+
+								const target = document.querySelector(this.getAttribute('href'));
+								target.scrollIntoView({
+										behavior: 'smooth'
+								});
+						});
+				});
+		</script>
+
+
+
+		<section class="S-features">
+			<div class="feature">
+				<div class="icon">📱</div>
+				<h3>Tudo em Um Único Lugar!</h3>
+				<p>
+					Acesse todos os recursos acadêmicos necessários, incluindo provas, materiais de aula e projetos de outros alunos.</p>
+			</div>
+
+			<div class="feature">
+				<div class="icon">⚡</div>
+				<h3>Otimize Seus Estudos!</h3>
+				<p>Prepare-se de forma mais eficiente.</p>
+			</div>
+
+
+			<div class="feature">
+				<div class="icon">🤝</div>
+				<h3>Colabore Também!</h3>
+				<p>Contribua com a comunidade compartilhando provas e materiais utilizados em suas aulas.</p>
+			</div>
+		</section>
+
+
+		<section class="landing-page-section">
+			<div class="container">
+
+				<div class="row align-items-center my-5 animate__animated animate__fadeInRight animate__slow">
+					<div class="col-md-6 order-md-2">
+						<img src="/images/imgCard2.png" alt="Informação 2" class="img-fluid rounded-3">
+					</div>
+					<div class="col-md-6 order-md-1">
+						<h2>Cadastre-se</h2>
+						<p>Ao se cadastrar você poderá ser notificado sempre que um novo material for adicionado!</p>
+						<a href="/cadastrar" class="btn btn-primary">Cadastrar</a>
+
+					</div>
+				</div>
+
+				</div>
+			</div>
+		</section>
+
+
+
+		<section class="discipline-scroll" id="discipline-scroll">
+			<h2>Acesse agora! ↙️</h2>
+			<div class="scroll-container">
+				<div class="scroll-item">
+					<a href="/materiais/p1/intro-prog">
+						<img src="/images/introProg.jpg" alt="Introdução a Programação">
+					</a>
+				</div>
+				<div class="scroll-item">
+					<a href="/materiais/p2/admso">
+						<img src="/images/admso.jpg" alt="Administração de Sistemas Operacionais">
+					</a>
+				</div>
+				<div class="scroll-item">
+					<a href="/materiais/p2/fund-prog-1">
+						<img src="/images/fundProg1.jpg" alt="Fundamentos de Programação I">
+					</a>
+				</div>
+				<div class="scroll-item">
+					<a href="/materiais/p3/fund-prog-2">
+						<img src="/images/fundProg2.jpg" alt="Fundamentos de Programação II">
+					</a>
+				</div>
+				<div class="scroll-item">
+					<a href="/materiais/p3/poo">
+						<img src="/images/poo.jpg" alt="Programação Orientada a Objetos">
+					</a>
+				</div>
+				<div class="scroll-item">
+					<a href="/materiais/p4/bd">
+						<img src="/images/bd.jpg" alt="Bancos de Dados">
+					</a>
+				</div>
+				<div class="scroll-item">
+					<a href="/materiais/p4/mfds">
+						<img src="/images/mfds.jpg" alt="Métodos e Ferramentas para Desenvolvimento de Software">
+					</a>
+				</div>
+				<div class="scroll-item">
+					<a href="/materiais/p4/prog-mov1">
+						<img src="/images/progMoveis1.jpg" alt="Programação de Dispositivos Móveis I">
+					</a>
+				</div>
+				<div class="scroll-item">
+					<a href="/materiais/p4/pp1">
+						<img src="/images/pp1.jpg" alt="Prática Profissional I">
+					</a>
+				</div>
+				<div class="scroll-item">
+					<a href="/materiais/p4/redes">
+						<img src="/images/redes.jpg" alt="Redes de Computadores">
+					</a>
+				</div>
+				<div class="scroll-item">
+					<a href="/materiais/p5/eletro-info">
+						<img src="/images/eletroInfo.jpg" alt="Eletrônica para Informática">
+					</a>
+				</div>
+				<div class="scroll-item">
+					<a href="/materiais/p5/pp2">
+						<img src="/images/pp2.jpg" alt="Prática Profissional II">
+					</a>
+				</div>
+				<div class="scroll-item">
+					<a href="/materiais/p5/prog-mov2">
+						<img src="/images/progMoveis2.jpg" alt="Programação de Dispositivos Móveis II">
+					</a>
+				</div>
+				<div class="scroll-item">
+					<a href="/materiais/p5/pweb1">
+						<img src="/images/progWeb1.jpg" alt="Programação Web I">
+					</a>
+				</div>
+				<div class="scroll-item">
+					<a href="/materiais/p6/intro-seg-ciber">
+						<img src="/images/introSegCiber.jpg" alt="Introdução a Segurança Cibernética">
+					</a>
+				</div>
+				<div class="scroll-item">
+					<a href="/materiais/p6/pp3">
+						<img src="/images/pp3.jpg" alt="Prática Profissional III">
+					</a>
+				</div>
+				<div class="scroll-item">
+					<a href="/materiais/p6/prog-web2">
+						<img src="/images/progWeb1.jpg" alt="Programação Web II">
+					</a>
+				</div>
+			</div>
+			<div class="dots-container">
+				<span class="dot"></span>
+				<span class="dot"></span>
+				<span class="dot"></span>
+			</div>
+		</section>
+
+
+
+
+
+			<!-- Containers de texto -->
+			<section class="container-fluid my-5">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="card shadow-sm p-4 h-100">
+							<h2 class="mb-3">Sobre o StudyShare</h2>
+							<p class="text-muted">StudyShare é uma plataforma que permite aos alunos compartilhar conteúdo e materiais de suas disciplinas de forma fácil e organizada. Nosso objetivo é facilitar o acesso à educação e fomentar a colaboração entre estudantes, para que todos possam aproveitar melhor o conteúdo e ter mais produtividade nos estudos.</p>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="card shadow-sm p-4 h-100">
+							<h2 class="mb-3">Materiais Disponíveis</h2>
+							<p class="text-muted">A plataforma StudyShare abrange todas as disciplinas do curso técnico integrado em informática do IFCE Campus Fortaleza.</p>
+						</div>
+					</div>
+
+
+				</div>
+			</section>
+
+
+		<section class="faq">
+			<h1>Perguntas Frequentes</h1>
+			<!--<div class="faq-item">
+				<h3>Quais tipos de materiais estão disponíveis? <span class="arrow">▼</span></h3>
+				<div class="answer">
+					<p>Temos uma variedade de materiais, incluindo slides de aula, exercícios, provas, trabalhos e projetos.</p>
+				</div>
+			</div>
+			<div class="faq-item">
+				<h3>Posso contribuir com novos materiais? <span class="arrow">▼</span></h3>
+				<div class="answer">
+					<p>Sim, após se cadastrar, você poderá enviar seus próprios materiais para serem compartilhados com a comunidade.</p>
+				</div>
+			</div>-->
+
+			<div class="faq-item">
+				<h3>1. O que é o StudyShare?<span class="arrow">▼</span></h3>
+				<div class="answer">
+					<p>O StudyShare é uma plataforma online desenvolvida para facilitar o estudo colaborativo entre os alunos do curso técnico integrado em informática do IFCE Campus Fortaleza. A plataforma organiza materiais de estudo, provas antigas, e projetos, permitindo que os usuários compartilhem e avaliem conteúdos.</p>
+				</div>
+			</div>
+			<div class="faq-item">
+				<h3>2. Quem pode utilizar o StudyShare?
+<span class="arrow">▼</span></h3>
+				<div class="answer">
+					<p>A plataforma é destinada principalmente aos estudantes do curso técnico integrado em informática do IFCE Campus Fortaleza, mas qualquer estudante que tenha interesse nos conteúdos disponibilizados pode criar uma conta e acessar as funcionalidades.</p>
+				</div>
+			</div>
+			<div class="faq-item">
+				<h3>3. Como posso criar uma conta no StudyShare?
+<span class="arrow">▼</span></h3>
+				<div class="answer">
+					<p>Para criar uma conta, acesse a página inicial do StudyShare, clique em "Cadastrar", e preencha as informações solicitadas, incluindo nome, e-mail, e uma senha. Depois de criar sua conta, você poderá personalizar seu perfil e começar a utilizar os recursos da plataforma.</p>
+				</div>
+			</div>
+			<div class="faq-item">
+				<h3>4. Quais são as principais funcionalidades do StudyShare?
+<span class="arrow">▼</span></h3>
+				<div class="answer">
+					<p>O StudyShare oferece uma série de funcionalidades, incluindo:
+
+					<li>Organização de materiais por períodos e disciplinas.</li>
+					<li>Personalização de perfil de usuário.</li>
+					<li>Notificações sobre novos conteúdos.</li>
+					<li>Compartilhamento e avaliação de materiais de estudo.</li>
+					<li>Acesso a provas antigas e projetos do GitHub.</li></p>
+				</div>
+			</div>
+			<div class="faq-item">
+				<h3>5. Como posso acessar as provas antigas?
+<span class="arrow">▼</span></h3>
+				<div class="answer">
+					<p>As provas antigas estão disponíveis na seção específica dentro da plataforma. Basta navegar até a disciplina desejada e acessar os arquivos de provas antigas disponibilizados.</p>
+				</div>
+			</div>
+			<div class="faq-item">
+				<h3>6. Como funciona a avaliação de materiais de estudo?
+<span class="arrow">▼</span></h3>
+				<div class="answer">
+					<p>Os usuários podem avaliar os materiais de estudo disponíveis na plataforma usando um sistema de estrelas, onde é possível atribuir de 1 a 5 estrelas ao conteúdo. Essa classificação ajuda outros estudantes a identificar os materiais mais úteis e de melhor qualidade com base nas experiências de quem já utilizou.</p>
+				</div>
+			</div>
+			<div class="faq-item">
+				<h3>7. Posso compartilhar meus próprios materiais de estudo?
+<span class="arrow">▼</span></h3>
+				<div class="answer">
+					<p>Sim! Você pode compartilhar materiais de estudo na plataforma. Antes de serem publicados, os materiais passam por uma avaliação da equipe de desenvolvedores para garantir que estejam dentro dos padrões de qualidade do StudyShare.</p>
+				</div>
+			</div>
+			<div class="faq-item">
+				<h3>8. Como recebo notificações sobre novos conteúdos?
+<span class="arrow">▼</span></h3>
+				<div class="answer">
+					<p>Você pode seguir as disciplinas de seu interesse e ativar as notificações no seu perfil. Dessa forma, sempre que novos conteúdos forem adicionados, você receberá uma notificação diretamente no seu perfil ou por e-mail.</p>
+				</div>
+			</div>
+			<div class="faq-item">
+				<h3>9. Como posso seguir uma disciplina específica na plataforma?
+<span class="arrow">▼</span></h3>
+				<div class="answer">
+					<p>Para seguir uma disciplina, acesse a seção de disciplinas no StudyShare, selecione a disciplina que deseja acompanhar e clique no botão "Seguir". A partir desse momento, você receberá notificações sobre novos materiais e atualizações relacionadas a essa disciplina diretamente em seu perfil.</p>
+				</div>
+			</div>
+			<div class="faq-item">
+				<h3>10. Onde posso encontrar suporte ou mais informações sobre o StudyShare?<span class="arrow">▼</span></h3>
+				<div class="answer">
+					<p>Caso precise de ajuda ou queira mais informações, você pode entrar em contato com a equipe de desenvolvedores através do email: contato@studyshare.com ou telefone: (85) 91234-5678</p>
+				</div>
+			</div>
+			<!--<div class="faq-item">
+				<h3>Q<span class="arrow">▼</span></h3>
+				<div class="answer">
+					<p>T</p>
+				</div>
+			</div>-->
+
+		</section>
+
+		<script>
+			// JavaScript to handle semester card expansion
+			const semesterCards = document.querySelectorAll('.semester-card');
+
+			semesterCards.forEach(card => {
+				card.addEventListener('click', () => {
+					// Remove 'active' class from all cards
+					semesterCards.forEach(c => c.classList.remove('active'));
+					// Add 'active' class to the clicked card
+					card.classList.add('active');
+				});
+			});
+
+			// JavaScript to handle FAQ item expansion
+			const faqItems = document.querySelectorAll('.faq-item');
+
+			faqItems.forEach(item => {
+				item.addEventListener('click', () => {
+					item.classList.toggle('active');
+				});
+			});
+		</script>
+
+	<footer> <%- include('./partials/footer.ejs') %> </footer>
 </body>
 </html>

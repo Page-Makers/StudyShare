@@ -1,23 +1,32 @@
+const express = require('express');
+const path = require('path');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const flash = require('connect-flash');
 var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+var db = require('./bd/firebaseConfig');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var entrarRouter = require('./routes/entrar');
-var p1Router = require('./routes/p1');
-var p2Router = require('./routes/p2');
-var p3Router = require('./routes/p3');
-var p4Router = require('./routes/p4');
-var p5Router = require('./routes/p5');
-var p6Router = require('./routes/p6');
+var avaliacoesRouter = require('./routes/avaliacoes');
+var conteudosRouter = require('./routes/conteudos');
+var disciplinasRouter = require('./routes/disciplinas');
+var materiaisRouter = require('./routes/materiais');
+var periodosRouter = require('./routes/periodos');
 
+var perfilRouter = require('./routes/perfil');
+var enviarMaterialRouter = require('./routes/enviarMaterial');
+var termosRouter = require('./routes/termos');
+var politicaRouter = require('./routes/politica');
+
+var loginRouter = require('./routes/login');
+var logoutRouter = require('./routes/logout');
+var cadastrarRouter = require('./routes/cadastrar');
+var recuperarRouter = require('./routes/recuperar');
 
 var app = express();
 
-// view engine setup
+// Configuração de view engine e middlewares
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -27,29 +36,49 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Configuração de sessões e flash messages
+app.use(session({
+  secret: 'AIzaSyBjFmgq2alFwZ4MXwdmx1Ia8cf7XGejLn8', // Substitua pelo seu segredo
+  resave: false,
+  saveUninitialized: true
+}));
+
+app.use(flash());
+
+// Middleware para passar mensagens para as views
+app.use((req, res, next) => {
+  res.locals.success_msg = req.flash('success_msg');
+  res.locals.error_msg = req.flash('error_msg');
+  next();
+});
+
+// Definição das rotas
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/entrar', entrarRouter);
-app.use('/p1', p1Router);
-app.use('/p2', p2Router);
-app.use('/p3', p3Router);
-app.use('/p4', p4Router);
-app.use('/p5', p5Router);
-app.use('/p6', p6Router);
+app.use('/avaliacoes', avaliacoesRouter);
+app.use('/conteudos', conteudosRouter);
+app.use('/disciplinas', disciplinasRouter);
+app.use('/materiais', materiaisRouter);
+app.use('/periodos', periodosRouter);
 
+app.use('/perfil', perfilRouter);
+app.use('/enviarMaterial', enviarMaterialRouter);
+app.use('/termos', termosRouter);
+app.use('/politica', politicaRouter);
 
-// catch 404 and forward to error handler
+app.use('/login', loginRouter);
+app.use('/logout', logoutRouter);
+app.use('/cadastrar', cadastrarRouter);
+app.use('/recuperar', recuperarRouter);
+
+// Tratamento de erros
 app.use(function(req, res, next) {
   next(createError(404));
 });
 
-// error handler
 app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
   res.status(err.status || 500);
   res.render('error');
 });

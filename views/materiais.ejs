@@ -1,0 +1,75 @@
+<%- include('./partials/menuUsuario.ejs') %>
+<link rel="stylesheet" href="/stylesheets/materiais.css">
+
+<div class="container">
+
+  <div class="container-banner">
+    <div class="breadcrumb-container">
+      <a href="/">Início</a>
+      <span class="separator">/</span>
+      <a href="/periodos">Períodos</a>
+      <span class="separator">/</span>
+      <a href="/disciplinas/<%= periodoId %>" style="text-transform:capitalize;"><%= periodoId %></a>
+      <span class="separator">/</span>
+      <span class="current"><%= nomeDisciplina %></span>
+    </div>
+  </div>
+
+  <div class="banner">
+    <img class="banner-image" src="/images/<%= imagemDisciplinaBanner %>" alt="Banner da Disciplina">
+    <div class="banner-text">
+      <h1><%= nomeDisciplina %></h1>
+    </div>
+  </div>
+
+  <div class="discipline-item">
+    <button class="follow-btn" data-discipline="adm-so" type="button" onclick="toggleFollow(this)">Seguir</button>
+  </div>
+
+  <section>
+    <div class="conteudos-avaliacoes">
+
+      <div class="caixa">
+        <div class="fundo">
+
+          <a href="/conteudos/<%= periodoId %>/<%= disciplinaId %>" target="_self">
+            <img src="/images/conteudos.png" alt="Conteúdos">
+            <p>Conteúdos</p>
+          </a>
+
+          <div class="overlay">
+            <a href="/conteudos/<%= periodoId %>/<%= disciplinaId %>" target="_self">
+              <div class="overlay"><p>Aqui você encontra os conteúdos da disciplina  </p></div>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="caixa">
+        <div class="fundo">
+
+
+
+          <a href="/avaliacoes/<%= periodoId %>/<%= disciplinaId %>" target="_self">
+            <img src="/images/avaliacoes.png" alt="Avaliações">
+            <p>Avaliações</p>
+          </a>
+
+          <div class="overlay">
+            <a href="/avaliacoes/<%= periodoId %>/<%= disciplinaId %>" target="_self">
+              <div class="overlay"><p>Aqui você encontra as avaliações da disciplina  </p></div>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<footer><%- include('./partials/footer.ejs') %></footer>
+<script src="/javascripts/botaoSeguir.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/login.css">
+    <title>Link de Redefinição Enviado</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="lado-esquerdo">
+            <video autoplay muted loop class="video-background">
+                <source src="/images/login.mp4" type="video/mp4">
+                Seu navegador não suporta este vídeo.
+            </video>
+
+            <div class="conteudo-lado-esquerdo">
+                <div class="logo">
+                    <a href="/"><img src="/images/logo.png" alt="Logo"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="lado-direito">
+            <div class="login-form">
+                <h3>Link de Redefinição Enviado</h3>
+                <p>Um e-mail com o link para redefinir sua senha foi enviado para <strong><%= email %></strong>.</p>
+                <p>Verifique sua caixa de entrada e siga as instruções.</p>
+                <a href="/login">Clique aqui para fazer login.</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

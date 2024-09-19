@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/stylesheets/login.css">
+<title>Criar Conta</title>
+</head>
+<body>
+
+  <div class="container">
+    <div class="lado-esquerdo">
+      <video autoplay muted loop class="video-background">
+        <source src="/images/login.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="conteudo-lado-esquerdo">
+        <div class="logo">
+          <a href="/"><img src="/images/logo.png" alt="Logo"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="lado-direito">
+      <div class="login-form">
+        <div class="voltar">
+          <button onclick="history.back()"><img src="/images/seta.png" alt="Seta"></button>
+        </div>
+        <h3>Criar uma <br>conta no StudyShare</h3>
+
+        <% if (success_msg) { %>
+          <div class="alert alert-success"><%= success_msg %></div>
+        <% } %>
+        <% if (error_msg) { %>
+          <div class="alert alert-danger"><%= error_msg %></div>
+        <% } %>
+
+        <form action="/cadastrar" method="POST">
+          <input type="text" name="nome" placeholder="Nome" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <input type="password" name="senha" placeholder="Senha" required>
+          <input type="password" name="confirmarSenha" placeholder="Confirmar Senha" required>
+          <button type="submit">Criar Conta</button>
+        </form>
+        <div class="login">
+          <p>Já tem uma conta? <a href="/login">Faça login</a></p>
+        </div>
+        <div class="termos">
+          <p>Ao criar uma conta no StudyShare, você está de acordo com nossos <a href="/termos">Termos de uso</a> e <a href="/politica">Política de privacidade</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

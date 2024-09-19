@@ -1,0 +1,144 @@
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+background-color: #f0f0f0;
+}
+
+.container {
+max-width: 1200px;
+margin: 20px auto;
+padding: 20px;
+background-color: #fff;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+border-radius: 8px;
+}
+
+.nome-periodo {
+background-color: #044389;
+color: #fff;
+padding: 30px;
+text-align: center;
+border-top-left-radius: 8px;
+border-top-right-radius: 8px;
+}
+
+.nome-periodo h1 {
+margin: 0;
+font-size: 36px; /* Aumentei um pouco o tamanho do título */
+}
+
+.disciplinas h5 {
+margin: 15px 0;
+font-size: 20px; /* Aumentei o tamanho e ajustei o espaçamento */
+color: #333;
+}
+
+.disciplinas {
+display: grid; /* Usando grid para melhor controle de layout */
+grid-template-columns: repeat(3, 1fr); /* 3 períodos por linha */
+gap: 20px;
+justify-content: center;
+}
+
+.disciplina {
+background-color: #fff;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+border-radius: 8px;
+overflow: hidden;
+text-align: center;
+transition: transform 0.3s ease; /* Adicionei transição para hover */
+}
+
+.disciplina:hover {
+transform: translateY(-5px); /* Efeito de levantamento no hover */
+}
+
+.disciplina img {
+width: 100%;
+height: auto;
+border-top-left-radius: 8px;
+border-top-right-radius: 8px;
+}
+
+.disciplina h5 {
+margin: 15px 0;
+font-size: 18px;
+color: #333;
+}
+
+.disciplina a {
+text-decoration: none;
+color: #333;
+display: block;
+padding: 10px;
+}
+
+.disciplina a:hover {
+background-color: #f0f0f0; /* Mudança de cor de fundo no hover */
+border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+.disciplinas {
+grid-template-columns: repeat(1, 1fr); /* Uma coluna em telas menores */
+}
+}
+
+.sidebar a{
+text-decoration:none;
+}
+
+.breadcrumb-container {
+padding: 15px 20px;
+background-color: #ffffff;
+border: 1px solid #ddd;
+border-radius: 8px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+margin-bottom: 20px;
+}
+
+.breadcrumb-container a {
+color: #3498db;
+text-decoration: none;
+font-size: 16px;
+font-weight: 500;
+transition: color 0.3s ease;
+}
+
+.breadcrumb-container a:hover {
+color: #2980b9;
+}
+
+.breadcrumb-container .separator {
+color: #999;
+margin: 0 8px;
+}
+
+.breadcrumb-container span {
+color: #333;
+}
+
+.breadcrumb-container::before {
+content: "\f053"; /* Ícone de seta para o lado (FontAwesome) */
+font-family: "Font Awesome 5 Free";
+font-weight: 900;
+color: #999;
+margin-right: 8px;
+}
+
+.breadcrumb-container span:first-child::before {
+content: "";
+}
+
+.breadcrumb-container .current {
+font-weight: bold;
+color: #333;
+}
+
+@media (max-width: 768px) {
+.breadcrumb-container {
+padding: 10px 15px;
+font-size: 14px;
+}
+}

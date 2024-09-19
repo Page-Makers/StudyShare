@@ -1,0 +1,39 @@
+<!-- Menu Condicional -->
+<% if (user) { %>
+  <%- include('./partials/menuUsuario.ejs') %>
+<% } else { %>
+  <%- include('./partials/menu.ejs') %>
+<% } %>
+<link rel="stylesheet" href="/stylesheets/disciplinas.css">
+
+<div class="container">
+    <div class="breadcrumb-container">
+        <a href="/">Início</a>
+        <span class="separator">/</span>
+        <a href="/periodos">Períodos</a>
+          <span class="separator">/</span>
+          <span class="current">P<%= nomePeriodo %></span>
+      </div>
+
+
+    <div class="nome-periodo">
+        <h1>Disciplinas do <%= nomePeriodo %>° Período</h1>
+    </div>
+
+    <section>
+        <div class="disciplinas">
+            <% disciplinas.forEach(function(disciplina) { %>
+                <div class="disciplina" name="disciplina">
+                    <a href="/materiais/<%= disciplina.periodoId %>/<%= disciplina.id %>" target="_self">
+                        <img src="/images/<%= disciplina.imagem %>" alt="<%= disciplina.nome %>">
+                        <h5><%= disciplina.nome %></h5>
+                    </a>
+                </div>
+            <% }); %>
+        </div>
+    </section>
+</div>
+
+<%- include('./partials/footer.ejs') %>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<%- include('./partials/menuUsuario.ejs') %>
+<link rel="stylesheet" href="/stylesheets/perfil.css">
+
+<div class="container">
+  <div class="profile-container">
+    <div class="profile-picture-container">
+      <img class="profile-picture" src="/images/perfil.png" alt="Profile Picture">
+      <button class="change-picture-btn">Alterar Foto</button>
+      <input type="file" class="profile-picture-input" accept="image/*" style="display: none;">
+    </div>
+
+    <div class="profile-info-container">
+      <div class="profile-header">
+        <h2><span class="display-name">Nome</span></h2>
+        <input type="text" class="edit-name-input" value="Nome" style="display: none;">
+        <button class="edit-info-btn" onclick="toggleEdit()"><i class="fas fa-edit"></i></button>
+      </div>
+
+      <p>
+        <span class="email-display">nome@aluno.ifce.edu.br</span>
+        <input type="email" class="edit-email-input" value="seu.email@example.com" style="display: none;">
+      </p>
+
+      <div class="additional-info">
+        <p><strong>Curso:</strong> 
+          <span class="display-curso">Técnico em Informática</span>
+          <input type="text" class="edit-curso-input" value="Técnico em Informática" style="display: none;">
+        </p>
+        <p><strong>Instituição:</strong> 
+          <span class="display-instituicao">Instituto Federal de Educação, Ciência e Tecnologia do Ceará - IFCE</span>
+          <input type="text" class="edit-instituicao-input" value="Instituto Federal de Educação, Ciência e Tecnologia do Ceará - IFCE" style="display: none;">
+        </p>
+        <p><strong>Ano:</strong> 
+          <span class="display-ano">3º Ano</span>
+          <input type="text" class="edit-ano-input" value="2º Ano" style="display: none;">
+        </p>
+      </div>
+
+      <button class="save-info-btn" style="display: none;" onclick="saveInfo()">Salvar</button>
+    </div>
+
+    <div class="achievements-container">
+      <h3>Conquistas</h3>
+      <div class="achievements">
+        <div class="achievement">
+          <img src="/images/emblema.jpg" alt="Emblema 1">
+          <p>P1</p>
+        </div>
+        <div class="achievement">
+          <img src="/images/emblema.jpg" alt="Emblema 2">
+          <p>P2</p>
+        </div>
+        <div class="achievement">
+          <img src="/images/emblema.jpg" alt="Emblema 3">
+          <p>P3</p>
+        </div>
+        <div class="achievement">
+          <img src="/images/emblema.jpg" alt="Emblema 3">
+          <p>P4</p>
+        </div>
+        <div class="achievement">
+          <img src="/images/emblema.jpg" alt="Emblema 3">
+          <p>P5</p>
+        </div>
+        <div class="achievement">
+          <img src="/images/emblema.jpg" alt="Emblema 3">
+          <p>P6</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal" class="modal">
+      <div class="modal-content">
+          <span class="close-btn">&times;</span>
+          <img id="modal-img" src="/images/emblema.jpg" alt="Conquista" class="modal-img">
+          <p>Parabéns! Você conquistou o emblema <span id="achievement-name">P1</span>.</p>
+      </div>
+  </div>
+
+  <div class="disciplinas-container">
+    <div class="disciplinas-box">
+      <h2>Disciplinas Seguidas</h2>
+      <hr size="7" width="100%" color="#0c1f46" noshade>
+      <ul class="disciplinas-seguidas">
+        <li>Introdução a Segurança Cibernética</li>
+        <li>Prática Profissional III</li>
+        <li>Programação Web II</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <%- include('./partials/footer.ejs') %>
+</footer>
+
+<script src="/javascripts/perfil.js"></script>
+<script src="/javascripts/botaoSeguir.js"></script>
+
+<script>
+  function toggleEdit() {
+    const elementsToToggle = document.querySelectorAll('.edit-name-input, .edit-email-input, .edit-curso-input, .edit-instituicao-input, .edit-ano-input, .save-info-btn, .display-name, .email-display, .display-curso, .display-instituicao, .display-ano');
+    elementsToToggle.forEach(el => el.style.display = el.style.display === 'none' ? '' : 'none');
+  }
+
+  function saveInfo() {
+    // Pegando os valores dos inputs
+    const name = document.querySelector('.edit-name-input').value;
+    const email = document.querySelector('.edit-email-input').value;
+    const curso = document.querySelector('.edit-curso-input').value;
+    const instituicao = document.querySelector('.edit-instituicao-input').value;
+    const ano = document.querySelector('.edit-ano-input').value;
+
+    // Atualizando os spans
+    document.querySelector('.display-name').textContent = name;
+    document.querySelector('.email-display').textContent = email;
+    document.querySelector('.display-curso').textContent = curso;
+    document.querySelector('.display-instituicao').textContent = instituicao;
+    document.querySelector('.display-ano').textContent = ano;
+
+    // Fechando os campos de edição
+    toggleEdit();
+
+    // Aqui você pode adicionar código para salvar as informações no backend (ex: Firebase)
+    alert('Informações salvas com sucesso!');
+  }
+
+  // Seleciona o modal e o botão de fechar
+  const modal = document.getElementById("modal");
+  const closeBtn = document.querySelector(".close-btn");
+  const modalImg = document.getElementById("modal-img");
+  const achievementName = document.getElementById("achievement-name");
+
+  // Função para abrir o modal
+  function openModal(achievement) {
+      const imgSrc = achievement.querySelector('img').src;
+      const name = achievement.querySelector('p').textContent;
+
+      // Atualiza a imagem e o texto no modal
+      modalImg.src = imgSrc;
+      achievementName.textContent = name;
+
+      // Mostra o modal
+      modal.style.display = "flex";
+  }
+
+  // Função para fechar o modal
+  function closeModal() {
+      modal.style.display = "none";
+  }
+
+  // Adiciona o evento de clique em todas as conquistas
+  document.querySelectorAll('.achievement').forEach(achievement => {
+      achievement.addEventListener('click', () => openModal(achievement));
+  });
+
+  // Adiciona o evento de clique no botão de fechar
+  closeBtn.addEventListener('click', closeModal);
+
+  // Fecha o modal ao clicar fora do conteúdo
+  window.addEventListener('click', (e) => {
+      if (e.target === modal) {
+          closeModal();
+      }
+  });
+
+</script>

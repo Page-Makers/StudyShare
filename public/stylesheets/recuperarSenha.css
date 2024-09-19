@@ -1,0 +1,160 @@
+body, html {
+margin: 0;
+padding: 0;
+height: 100%;
+font-family: Arial, sans-serif;
+}
+
+.container {
+display: flex;
+min-height: 100vh;
+}
+
+.logo {
+top: 10px;
+left: 10px;
+position: absolute;
+}
+
+.logo img {
+max-width: 35%; 
+height: auto; 
+margin: 0;
+display: flex;
+justify-content: left;
+align-items: left;
+padding: 10px;
+}
+
+.lado-esquerdo {
+background-color: #102B62;
+color: #fff;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 20px;
+text-align: center;
+flex: 1;
+}
+
+.lado-direito {
+background-color: #fff;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 20px;
+flex: 1;
+}
+
+.login-form {
+max-width: 300px;
+width: 100%;
+text-align: center;
+}
+
+.login-form input {
+width: 100%;
+margin-bottom: 10px;
+padding: 10px;
+box-sizing: border-box;
+border-radius: 5px;
+border: 1px solid #424242;
+}
+
+.login-form input:focus {
+outline: none;
+border: 2px solid #102B62;
+}
+
+.login-form button {
+width: 100%;
+margin-bottom: 10px;
+padding: 10px;
+border: none;
+cursor: pointer;
+border-radius: 5px;
+}
+
+.login-form .login-opcoes {
+margin-bottom: 10px;
+}
+
+.login-opcoes button {
+display: flex;
+align-items: center;
+justify-content: flex-start;
+background-color: #cfcfcf;
+color: #000000;
+text-align: center;
+}
+
+.opcao-image img{
+width: 15px; 
+margin-right: 5px;
+border-radius:1px;
+margin-right: 15px;
+}
+
+.login-opcoes button p {
+text-align: center; 
+margin: 0; 
+line-height: 20px;
+}
+
+.login-opcoes button:hover{
+background-color: #1273f3;
+color: #ffffff;
+}
+
+.login-form a{
+text-decoration: none;
+color: #1273f3;
+font-size: 14px;
+}
+
+.login-form a:hover {
+text-decoration: underline;
+}
+
+.login-form h3 {
+font-family: Arial, sans-serif;
+}
+
+.criar-conta p{
+font-size: 13px;
+margin-top: 20px;
+}
+
+.termos {
+font-size: 10px;
+color: #424242;
+}
+
+.termos a{
+font-size: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+.container {
+flex-direction: column;
+}
+.lado-esquerdo, .lado-direito {
+flex: 1; 
+width: 100%;
+padding: 10px;
+}
+}
+
+
+.paleta de cores{
+color:#044389;/*azul escuro*/
+color:#FCFF4B;/*amarelo*/
+color:#FFAD05;/*laranja*/
+color:#7CAFC4;/*azul ciano*/
+color:#5995ED;/*azul claro*/
+color:#ffffff;/*branco*/
+color:#000000;/*preto*/
+color:#cfcfcf;/*cinza claro*/
+color:#424242;/*cinza médio*/
+color:#333333;/*cinza escuro*/
+}

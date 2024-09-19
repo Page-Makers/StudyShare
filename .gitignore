@@ -128,3 +128,6 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# .gitignore
+studyshare-6065a-firebase-adminsdk-r27tp-b3525d8217.json

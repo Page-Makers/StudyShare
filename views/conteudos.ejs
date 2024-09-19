@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= nomeDisciplina %> - Conteúdos</title>
+  <link rel="stylesheet" href="/stylesheets/conteudos.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <%- include('./partials/menuUsuario.ejs') %>
+
+
+  <section class="section-intro">
+    <div class="container">
+
+      <div class="container-banner">
+        <div class="breadcrumb-container">
+          <a href="/">Início</a>
+          <span class="separator">/</span>
+          <a href="/periodos">Períodos</a>
+          <span class="separator">/</span>
+          <a href="/disciplinas/<%= periodoId %>" style="text-transform:capitalize;"><%= periodoId %></a>
+          <span class="separator">/</span>
+          <a href="/materiais/<%= periodoId %>/<%= disciplinaId %>" style="text-transform:capitalize;"><%= nomeDisciplina %></a>
+          <span class="separator">/</span>
+          <span class="current">Conteúdos</span>
+
+        </div>
+      </div>
+
+      <div class="nome-disciplina">
+        <h3><%= nomeDisciplina %></h3>
+      </div>
+
+      <div class="content-wrapper">
+        <div id="main-content" class="content-box main-content">
+          <!-- Conteúdo inicial -->
+          <h2>Bem-vindo à <%= nomeDisciplina %></h2>
+          <p>Escolha um dos conteúdos da lista para começar a aprender.</p>
+        </div>
+        <div class="content-box content-list">
+          <div class="titulo-conteudo">
+            <h3>Conteúdos</h3>
+          </div>
+          <ul>
+            <li>
+              <a href="#welcome" onclick="showWelcome()">Bem-vindo</a>
+            </li>
+            <% conteudos.forEach(function(conteudo) { %>
+              <li>
+                <a href="#<%= conteudo.nome %>" onclick="changeContent('<%= conteudo.nome %>', '<%= conteudo.descricao %>', '<%= conteudo.pdf %>', '<%= conteudo.id %>')"><%= conteudo.nome %></a>
+              </li>
+            <% }); %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer><%- include('./partials/footer.ejs') %></footer>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <script>
+    const firebaseConfig = {
+      // suas credenciais do Firebase
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    function showWelcome() {
+      var contentBox = document.getElementById('main-content');
+
+      contentBox.innerHTML = `
+        <h2>Bem-vindo à <%= nomeDisciplina %></h2>
+        <p>Escolha um dos conteúdos da lista para começar a aprender.</p>
+      `;
+
+      window.location.hash = 'welcome';
+    }
+
+    function changeContent(nome, descricao, pdfPath, conteudoId) {
+      var contentBox = document.getElementById('main-content');
+
+      contentBox.innerHTML = `
+        <h2>${nome}</h2>
+        <p>${descricao}</p>
+        ${pdfPath ? `<iframe src="/${pdfPath}" width="100%" height="600px"></iframe>
+                      <p><a href="/${pdfPath}" class="pdf-button" target="_blank">Abrir PDF em uma nova guia</a></p>` : ''}
+
+        <div class="stars" id="stars-${conteudoId}">
+          <form action="">
+            <input class="star star-5" id="star-5-${conteudoId}" type="radio" name="star-${conteudoId}"/>
+            <label class="star star-5" for="star-5-${conteudoId}"></label>
+            <input class="star star-4" id="star-4-${conteudoId}" type="radio" name="star-${conteudoId}"/>
+            <label class="star star-4" for="star-4-${conteudoId}"></label>
+            <input class="star star-3" id="star-3-${conteudoId}" type="radio" name="star-${conteudoId}"/>
+            <label class="star star-3" for="star-3-${conteudoId}"></label>
+            <input class="star star-2" id="star-2-${conteudoId}" type="radio" name="star-${conteudoId}"/>
+            <label class="star star-2" for="star-2-${conteudoId}"></label>
+            <input class="star star-1" id="star-1-${conteudoId}" type="radio" name="star-${conteudoId}"/>
+            <label class="star star-1" for="star-1-${conteudoId}"></label>
+          </form>
+        </div>
+        <div class="comment-section" id="comment-section-${conteudoId}">
+          <div class="col-md-8">
+            <h3>O que você achou desse conteúdo?</h3>
+            <form>
+              <textarea placeholder=" " rows="1" id="comment-${conteudoId}"></textarea>
+              <button type="submit" class="btn btn-primary" id="submit-${conteudoId}">enviar</button>
+            </form>
+          </div>
+        </div>
+      `;
+
+      const submitButton = document.getElementById(`submit-${conteudoId}`);
+      submitButton.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        const stars = document.querySelector(`input[name="star-${conteudoId}"]:checked`).value;
+        const comment = document.getElementById(`comment-${conteudoId}`).value;
+
+        db.collection('disciplinas').doc(conteudoId).set({
+          stars: stars,
+          comment: comment
+        })
+        .then(() => {
+          console.log('Dados salvos com sucesso!');
+        })
+        .catch((error) => {
+          console.error('Erro ao salvar os dados:', error);
+        });
+      });
+
+      window.location.hash = nome;
+    }
+  </script>
+</body>
+</html>

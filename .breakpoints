@@ -1,0 +1,52 @@
+{
+  "files": {
+    "app.js": [
+      {
+        "id": "9f5ac38c-e944-45e9-9df1-145cb1b43275",
+        "line": 1,
+        "version": 36,
+        "index": 0
+      }
+    ],
+    "firebaseConfig.js": [
+      {
+        "id": "22a155a7-7472-407c-a00a-42debc5f9f85",
+        "line": 8,
+        "version": 1,
+        "index": 213
+      }
+    ],
+    "public/stylesheets/disciplinas.css": [
+      {
+        "id": "115d5656-9f70-4997-8306-7b81b0d22e4d",
+        "line": 1,
+        "version": 13,
+        "index": 0
+      }
+    ],
+    "studyshare-6065a-firebase-adminsdk-r27tp-b3525d8217.json": [
+      {
+        "id": "4fd01c36-93cd-47ad-81be-3c30b726b237",
+        "line": 5,
+        "version": 1,
+        "index": 131
+      }
+    ],
+    "views/conteudoAdmso.ejs": [
+      {
+        "id": "730f9a92-45f3-48aa-93da-f5108d596935",
+        "line": 1,
+        "version": 27,
+        "index": 0
+      }
+    ],
+    "views/conteudos.ejs": [
+      {
+        "id": "f38bdf73-66ac-4365-b311-fe41d07e84b3",
+        "line": 1,
+        "version": 3,
+        "index": 0
+      }
+    ]
+  }
+}

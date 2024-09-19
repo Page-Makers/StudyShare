@@ -1,0 +1,44 @@
+{
+	"motd": {
+		"cloudBuildErrorAfter": 1594252800000,
+		"cloudBuildWarnAfter": 1590019200000,
+		"defaultNode10After": 1594252800000,
+		"minVersion": "3.0.5",
+		"node8DeploysDisabledAfter": 1613390400000,
+		"node8RuntimeDisabledAfter": 1615809600000,
+		"node8WarnAfter": 1600128000000,
+		"fetched": 1717013469024
+	},
+	"usage": true,
+	"analytics-uuid": "8177ce1a-3091-4094-9ad3-f97fa84f9bee",
+	"user": {
+		"iss": "accounts.google.com",
+		"azp": "563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com",
+		"aud": "563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com",
+		"sub": "118006599432493535704",
+		"email": "ctt.pagemakers@gmail.com",
+		"email_verified": true,
+		"at_hash": "I-VWP3QUP0-1WQH6HqrYlg",
+		"iat": 1717014149,
+		"exp": 1717017749
+	},
+	"tokens": {
+		"expires_at": 1717017748195,
+		"access_token": "ya29.a0AXooCgvHi2t5_vcXWGMpn82p9HryvCyFjdQQqWYmOKaMxqqE6DlXJmFq2gLJ8_2GtaXkgfFMLnlwHlbBRA1ou3Geha_dW4ns9EQViYemxtSEnyevxknox2hpsG28UzGFKawGT7srTEMif-OaC1dwLAiI4B8i8trmsKBy9iHhLQaCgYKAbkSARASFQHGX2Mi-DlmaESYZT20Itw8SG4BDA0177",
+		"expires_in": 3599,
+		"refresh_token": "1//05q_exWz7RaZaCgYIARAAGAUSNwF-L9IrfAxTMvEc8_9Dvsqf1Ix771lXriM0QU_7dgY7N-ofl5uNeNtlzOidIxKaO3RhsIPo0Bk",
+		"scope": "https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/firebase https://www.googleapis.com/auth/cloudplatformprojects.readonly openid https://www.googleapis.com/auth/userinfo.email",
+		"token_type": "Bearer",
+		"id_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjY3MTk2NzgzNTFhNWZhZWRjMmU3MDI3NGJiZWE2MmRhMmE4YzRhMTIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiNTYzNTg0MzM1ODY5LWZncmhnbWQ0N2JxbmVraWo1aThiNXByMDNobzg0OWU2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiNTYzNTg0MzM1ODY5LWZncmhnbWQ0N2JxbmVraWo1aThiNXByMDNobzg0OWU2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTE4MDA2NTk5NDMyNDkzNTM1NzA0IiwiZW1haWwiOiJjdHQucGFnZW1ha2Vyc0BnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXRfaGFzaCI6IkktVldQM1FVUDAtMVdRSDZIcXJZbGciLCJpYXQiOjE3MTcwMTQxNDksImV4cCI6MTcxNzAxNzc0OX0.N6uetN-taD0mWXhuWI_g1o0ndmKbbanuHCTJMrixutaAJ3siBiNImq_OOL0TUa_p-eo-EAw77_ArGH2dkvw9F8Hckkm_vw3y5_fxoT7xiirMglpX1mFguuv922mQqZyNBYhhDmgC5l7JFaJtOCsv-6imDcKuf_3kQLQNVX2mTHMQQIwPGQ3ZLC7LRjhjbhY84GXUYUhxI-4nNLwJN19dM6Z2MkgProDzHI6fYAQyLWhb74sBlXVtA14V2McQXDfNlDB2lDC8zAOiypXJs8uLAyPSVWOM950SdUdo10t-WLTvxGK97Xh1kA6qihyor7_JKlZqdUjwpRafd717npGuwA"
+	},
+	"loginScopes": [
+		"email",
+		"openid",
+		"https://www.googleapis.com/auth/cloudplatformprojects.readonly",
+		"https://www.googleapis.com/auth/firebase",
+		"https://www.googleapis.com/auth/cloud-platform"
+	],
+	"activeProjects": {
+		"/home/runner/StudyShare-20": "studyshare-6065a"
+	}
+}

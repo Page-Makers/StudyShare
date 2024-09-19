@@ -1,0 +1,198 @@
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+background-color: #f0f0f0;
+}
+
+.container {
+max-width: 1200px;
+margin: 20px auto;
+padding: 20px;
+background-color: #ffffff;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+border-radius: 8px;
+}
+
+.nome-disciplina {
+background-color: #044389;
+color: #ffffff;
+padding: 20px;
+text-align: center;
+border-radius: 8px 8px 0 0;
+}
+
+.nome-disciplina h3 {
+margin: 0;
+font-size: 24px;
+}
+
+.content-wrapper {
+display: flex;
+justify-content: space-between;
+align-items: flex-start; 
+gap: 20px; 
+}
+
+.content-box {
+background-color: #ffffff;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+border-radius: 8px;
+padding: 20px;
+flex: 1;
+min-height: 300px;
+}
+
+.image-box {
+display: none; 
+}
+
+.image-box img {
+max-width: 100%;
+height: auto;
+border-radius: 8px;
+}
+
+.content-list {
+padding: 20px;
+flex: 1 0 200px; /* Define a largura mínima da lista */
+min-height: 300px; /* Altura mínima ajustável */
+}
+
+.content-list h3 {
+margin: 0 0 10px;
+font-size: 20px;
+color: #044389;
+text-align: center;
+}
+
+.content-list ul {
+list-style-type: none;
+padding: 0;
+margin: 0;
+}
+
+.content-list ul li {
+padding: 10px;
+border: 1px solid #ddd;
+border-radius: 5px;
+margin-bottom: 10px;
+background-color: #ffffff;
+transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content-list ul li:hover {
+background-color: #f0f0f0;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.content-list ul li a {
+text-decoration: none;
+color: #044389;
+display: block;
+font-size: 16px;
+}
+
+.content-list ul li a:hover {
+color: #5995ED;
+}
+
+/* Estilos específicos para main-content */
+.main-content {
+padding: 20px;
+background-color: #ffffff;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+border-radius: 8px;
+flex: 3;
+text-align: left;
+min-height: 378px; /* Altura mínima ajustável */
+}
+
+/* Estilos para o botão de abrir PDF em nova guia */
+.pdf-link-button {
+display: inline-block;
+margin-top: 10px;
+padding: 10px 20px;
+background-color: #044389;
+color: #ffffff;
+border-radius: 5px;
+font-size: 16px;
+transition: background-color 0.3s ease, box-shadow 0.3s ease;
+border-color:none;
+text-decoration: none; 
+outline: none;
+border: none;
+
+}
+
+.pdf-link-button:hover {
+background-color: #5995ED;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+.content-wrapper {
+flex-direction: column;
+}
+
+.content-box {
+margin: 10px 0;
+}
+}
+
+
+/* Caminho de Navegação */
+.breadcrumb-container {
+padding: 15px 20px;
+background-color: #ffffff;
+border: 1px solid #ddd;
+border-radius: 8px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+margin-bottom: 20px;
+}
+
+.breadcrumb-container a {
+color: #3498db;
+text-decoration: none;
+font-size: 16px;
+font-weight: 500;
+transition: color 0.3s ease;
+}
+
+.breadcrumb-container a:hover {
+color: #2980b9;
+}
+
+.breadcrumb-container .separator {
+color: #999;
+margin: 0 8px;
+}
+
+.breadcrumb-container span {
+color: #333;
+}
+
+.breadcrumb-container::before {
+content: "\f053"; /* Ícone de seta para o lado (FontAwesome) */
+font-family: "Font Awesome 5 Free";
+font-weight: 900;
+color: #999;
+margin-right: 8px;
+}
+
+.breadcrumb-container span:first-child::before {
+content: "";
+}
+
+.breadcrumb-container .current {
+font-weight: bold;
+color: #333;
+}
+
+/* Ajustes para telas pequenas */
+@media (max-width: 768px) {
+.breadcrumb-container {
+padding: 10px 15px;
+font-size: 14px;
+}
+}

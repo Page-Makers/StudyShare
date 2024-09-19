@@ -1,0 +1,268 @@
+/* Estilos gerais */
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+background-color: #f0f0f0;
+}
+
+.container {
+max-width: 1000px;
+margin: 20px auto;
+padding: 20px;
+background-color: #ffffff;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+border-radius: 8px;
+}
+
+.profile-container {
+display: flex;
+justify-content: space-between;
+gap: 20px;
+margin-top: 20px;
+}
+
+.profile-picture-container {
+flex: 1;
+background-color: #ffffff;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+border-radius: 8px;
+padding: 20px;
+text-align: center;
+}
+
+.profile-picture {
+width: 150px;
+height: 150px;
+border-radius: 50%;
+object-fit: cover;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+margin-bottom: 15px;
+}
+
+.change-picture-btn {
+padding: 10px 20px;
+background-color: #044389;
+color: #ffffff;
+border-radius: 5px;
+border: none;
+cursor: pointer;
+transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.change-picture-btn:hover {
+background-color: #5995ED;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info-container {
+flex: 2;
+background-color: #ffffff;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+border-radius: 8px;
+padding: 20px;
+}
+
+.profile-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.profile-header h2 {
+font-size: 24px;
+margin: 0;
+}
+
+.edit-info-btn {
+background: none;
+border: none;
+font-size: 20px;
+color: #044389;
+cursor: pointer;
+transition: color 0.3s ease;
+}
+
+.edit-info-btn:hover {
+color: #5995ED;
+}
+
+.email-display {
+font-size: 16px;
+margin-top: 10px;
+color: #333;
+}
+
+.additional-info {
+margin-top: 20px;
+}
+
+.additional-info p {
+margin: 5px 0;
+font-size: 16px;
+}
+
+.achievements-container {
+margin-top: 20px;
+}
+
+.achievements-container h3 {
+font-size: 20px;
+margin-bottom: 10px;
+color: #044389;
+}
+
+.achievements {
+display: flex;
+flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+gap: 5px; /* Reduz o espaço entre as conquistas */
+justify-content: space-between; /* Mantém os itens distribuídos de forma espaçada */
+}
+
+.achievement {
+width: calc(33.33% - 8px); /* Reduz levemente a largura para permitir menos espaço entre os itens */
+text-align: center;
+background-color: #ffffff;
+border-radius: 10px;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+cursor: pointer; /* Adiciona um cursor de pointer para indicar que é clicável */
+}
+
+.achievement:hover {
+transform: translateX(5px); /* Move o item ligeiramente para a direita ao passar o mouse */
+box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra mais pronunciada */
+}
+
+.achievement img {
+width: 60px;
+height: 60px;
+border-radius: 8px;
+object-fit: cover;
+margin-bottom: 5px;
+transition: transform 0.3s ease;
+}
+
+.achievement p {
+font-size: 14px;
+color: #555;
+}
+
+@media (max-width: 768px) {
+.achievements {
+justify-content: center;
+}
+
+.achievement {
+width: 47%; /* Ajusta a largura para 2 conquistas por linha em telas menores */
+margin-bottom: 10px; /* Reduz o espaçamento vertical entre as linhas */
+}
+}
+
+
+
+
+.disciplinas-container {
+margin-top: 30px;
+}
+
+.disciplinas-box {
+background-color: #ffffff;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+border-radius: 8px;
+padding: 20px;
+}
+
+.disciplinas-box h2 {
+font-size: 24px;
+color: #044389;
+margin-bottom: 10px;
+text-align: center;
+}
+
+.disciplinas-box hr {
+margin: 0 auto 20px;
+border: none;
+height: 2px;
+background-color: #0c1f46;
+}
+
+.disciplinas-seguidas {
+list-style-type: none;
+padding: 0;
+margin: 0;
+}
+
+.disciplinas-seguidas li {
+padding: 10px;
+border: 1px solid #ddd;
+border-radius: 5px;
+margin-bottom: 10px;
+background-color: #ffffff;
+transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.disciplinas-seguidas li:hover {
+background-color: #f0f0f0;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+.profile-container {
+flex-direction: column;
+}
+
+.profile-info-container {
+margin-top: 20px;
+}
+
+.achievements {
+justify-content: center;
+}
+}
+
+/* Estilo para o modal */
+.modal {
+display: none; /* Inicialmente escondido */
+position: fixed; /* Fica posicionado acima do conteúdo */
+z-index: 1; /* Coloca o modal acima de outros elementos */
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+justify-content: center;
+align-items: center;
+}
+
+.modal-content {
+background-color: #fff;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+text-align: center;
+width: 300px;
+position: relative;
+}
+
+.modal-img {
+width: 100px;
+height: 100px;
+object-fit: cover;
+margin-bottom: 10px;
+border-radius: 50%;
+}
+
+.close-btn {
+position: absolute;
+top: 10px;
+right: 10px;
+font-size: 24px;
+cursor: pointer;
+color: #333;
+transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+color: #ff0000;
+}
+

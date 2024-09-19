@@ -1,17 +1,640 @@
 body {
-  padding: 20px;
-  font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #c1bdbd;
+
 }
 
-a {
-  color: #00B7FF;
+.vh-100 {
+    height: 100vh; 
 }
-.carousel-box {
+.custom-h1 {
+  font-size: 2.9rem;
+}
+.custom-p {
+  font-size: 1.1rem;
+}
+
+.hero-section {
+  background: url('/images/hero-bg.jpg') no-repeat center center/cover;
+  color: white;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero-section p {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+}
+
+.btn-primary {
+  background-color: #1273f3;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.25rem;
+  border-radius: 50px;
+}
+
+.btn-primary:hover {
+  background-color: #0a5bb5;
+}
+
+/*.features-section {
+  background-color: #fff;
+  padding: 60px 0;
+}
+
+.feature-box {
+  text-align: center;
+  margin-bottom: 30px;
+}*/
+
+.feature-container {
   display: flex;
-  justify-content: center;
-  margin: 90px; 
+  flex-wrap: wrap; /* Permite que os itens se ajustem em múltiplas linhas */
+  justify-content: center; /* Centraliza os itens */
+  align-items: center; /* Centraliza os itens verticalmente */
+  min-height: 150px; /* Define uma altura mínima (ajuste conforme necessário) */
+  padding: 10px; /* Adiciona padding para espaço interno */
 }
 
-.carousel {
-  max-width: 400px; 
 }
+
+.feature-box {
+text-align: center;
+margin: 15px; /* Ajuste a margem para evitar overflow */
+flex: 1 1 200px; /* Flex-grow, flex-shrink, e flex-basis */
+max-width: 300px; /* Limita a largura máxima */
+}
+
+.feature-icon {
+  font-size: 3rem;
+  color: #1273f3;
+  margin-bottom: 20px;
+}
+
+.feature-box h3 {
+  font-size: 1.75rem;
+  margin-bottom: 10px;
+}
+
+.feature-box p {
+  font-size: 1rem;
+  color: #666;
+}
+
+
+
+
+
+footer {
+  background-color: #102B62;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-section p {
+    font-size: 1.25rem;
+  }
+
+  .feature-box {
+    margin-bottom: 20px;
+    flex: 1 1 100%; /* Em telas menores, ocupa 100% da largura */
+  }
+  .feature-section {
+    min-height: 70rem; /* Aumenta a altura mínima em telas menores */
+  }
+
+  }
+
+  /* Para telas de iPhones (ex: iPhone SE, 8) */
+  @media only screen and (max-width: 375px) {
+  .feature-box {
+    margin-bottom: 15px;
+    flex: 1 1 100%;
+  }
+  .feature-section {
+    min-height: 60rem; /* Ajusta a altura mínima */
+  }
+  }
+
+
+
+/* Para telas de iPhones Plus (ex: iPhone 8 Plus) */
+@media only screen and (min-width: 376px) and (max-width: 414px) {
+  .feature-box {
+    margin-bottom: 20px;
+    flex: 1 1 48%; /* Ocupa 48% da largura */
+  }
+  .feature-section {
+    min-height: 65rem; /* Ajusta a altura mínima */
+  }
+}
+
+/* Para telas de iPads */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .feature-box {
+    margin-bottom: 20px;
+    flex: 1 1 30%; /* Ocupa 30% da largura */
+  }
+  .feature-section {
+    min-height: 70rem; /* Mantém a altura mínima */
+  }
+}
+
+/* Para telas de Macs (laptops e desktops) */
+@media only screen and (min-width: 1025px) {
+  .feature-box {
+    margin-bottom: 20px;
+    flex: 1 1 22%; /* Ocupa 22% da largura */
+  }
+  .feature-section {
+    min-height: 70rem; /* Mantém a altura mínima */
+  }
+}
+
+
+
+
+.cover {
+background-color:#e5e8f6 ;
+  color:#1a1919;
+    background-size: cover;
+    background-position: center center;
+    min-height: 60vh;
+    max-width: 1600px; /* Largura máxima */
+    margin: 0 auto; /* Centraliza horizontalmente */
+  font-size:20px;
+  padding:14px;
+
+}
+
+.vh-75 {
+  min-height: 70vh;
+  align-items:start;
+}
+
+
+
+/* Estilos para os containers de texto */
+.container-fluid.my-5 {
+  margin-top: 4rem !important;
+  margin-bottom: 4rem !important;
+
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color:#171716;
+    margin: 20px;
+
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+  font-size: 1.5rem;
+}
+
+
+.card li {
+  font-size: 0.9rem;
+}
+
+/* card cadastro" */
+.landing-page-section {
+  padding: 4rem 0;
+  background-color:  #044389;
+}
+
+.landing-page-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+
+.landing-page-section p {
+  font-size: 1rem;
+  color: #ffffff;
+  margin-bottom: 2rem;
+}
+
+.landing-page-section .btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  font-size: 1rem;
+  padding: 0.8rem 1.5rem;
+}
+
+.landing-page-section .btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004d99;
+}
+
+/* Ocultar a barra de rolagem em navegadores baseados em Webkit (Chrome, Safari, Opera) */
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+/* Ocultar a barra de rolagem em navegadores baseados em Firefox */
+* {
+    scrollbar-width: none;
+}
+
+/* Ocultar a barra de rolagem em navegadores baseados em Internet Explorer/Edge */
+body {
+    -ms-overflow-style: none;
+}
+
+
+/*perguntas frequentes*/
+.faq {
+  padding: 20px;
+  margin: 0 20px;
+}
+.faq h1 {
+  text-align: center;
+  font-size: 25px;
+  margin-bottom:50px;
+  font-weight: bold;
+  color:#044389
+}
+.faq-item {
+  border-bottom: 1px solid #cfcfcf;
+  padding: 20px 0;
+}
+.faq-item h3 {
+  margin-top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  color: #0056b3;
+  font-size: 18px;
+  font-weight: bold;
+
+}
+.faq-item h3 .arrow {
+  font-size: 16px;
+  transition: transform 0.3s;
+  color: #044389;
+}
+.faq-item.active h3 .arrow {
+  transform: rotate(180deg);
+}
+.faq-item .answer {
+  display: none;
+  padding-top: 10px;
+  color: #424242;
+  font-size: 16px;
+  opacity: 0;
+  animation: fadeIn 0.3s ease-in-out forwards;
+}
+.faq-item.active .answer {
+  display: block;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+@media (min-width: 1200px) {
+.cover .row > div:first-child .btn {
+margin-top: 1.5rem;
+}
+}
+
+.floating-image {
+animation: float 6s ease-in-out infinite;
+}
+
+
+
+@keyframes float {
+0% {
+transform: translateY(0);
+}
+50% {
+transform: translateY(-10px);
+}
+100% {
+transform: translateY(0);
+}
+}
+
+
+/*puxa o menu lateral */
+.btn-primary.rounded-pill {
+  border-radius: 50px;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary.rounded-pill:hover {
+  background-color: #0056b3;
+}
+
+
+
+/* Animações */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+
+
+/* Cards features*/
+
+.S-features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 200px 20px;
+  background-color: #0a2957;
+
+}
+.S-features .feature {
+  transition: transform 0.3s ease-in-out;
+  width: 350px; /* Aumenta a largura das features */
+  height: 350px; /* Aumenta a altura das features */
+}
+
+
+.S-features .feature:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature {
+  font-size: 18px;
+  display: flex; /* Alinha o conteúdo internamente */
+  flex-direction: column; /* Alinha o conteúdo em coluna */
+  align-items: center;
+  text-align: center;
+  background-color: #044389;
+  padding: 20px; /* Ajuste o padding se necessário */
+  border-radius: 15px; /* Bordas arredondadas */
+  margin: 14px; /* Margem uniforme */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.feature .icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.feature h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color:#ffffff;
+}
+
+.feature p {
+  font-size: 16px;
+  color: #f5ffd1;
+}
+
+main h1{
+  color:#044389;
+
+}
+
+.sidebar a{
+  text-decoration:none;
+}
+.discipline-scroll {
+  text-align: center;
+  margin: 4px 0;
+  overflow-y: auto;
+  overflow-x: scroll;
+  height: 450px;
+  padding:35px;
+}
+
+
+.scroll-container {
+  display: flex;
+  overflow-x: scroll; /* Barra de rolagem horizontal sempre visível */
+  overflow-y: hidden; /* Barra de rolagem vertical oculta */
+  height: 300px; /* Defina uma altura fixa para a rolagem, se necessário */
+  padding: 7px 0;
+  height: 350px; /* Aumenta a altura do container */
+}
+
+/* Estilizando a barra de rolagem apenas para .scroll-container */
+.scroll-container::-webkit-scrollbar {
+  width:1px; /* Largura da barra de rolagem */
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: #044389; /* Cor do "polegar" da barra de rolagem */
+  border-radius: 3px; /* Bordas arredondadas do polegar */
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+  background-color: #0a2957; /* Cor do polegar ao passar o mouse */
+}
+
+/* Para navegadores Firefox */
+.scroll-container {
+  scrollbar-width: auto; /* Para Firefox */
+}
+
+/* Para Internet Explorer/Edge */
+.scroll-container {
+  -ms-overflow-style: auto; /* Para Internet Explorer/Edge */
+}
+
+
+
+.scroll-item {
+  flex: none;
+  margin:  5px;
+}
+
+.scroll-item img {
+  width: 350px; /* Ajuste o tamanho conforme necessário */
+  height: auto;
+  border-radius: 5px; /* Bordas arredondadas nas imagens */
+  transition: transform 0.3s;
+}
+
+.scroll-item img:hover {
+  transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+}
+
+
+.discipline-scroll h2{
+  margin-top:50px;
+  font-weight: bold;
+  color:#044389;
+
+}
+
+.container-fluid my-5 h2{
+  color:#044389;
+
+}
+
+/* Estilo geral para a seção */
+.container-fluid {
+    padding: 50px;
+    background-color: #044389; /* Cor de fundo suave */
+}
+
+/* Estilo para as colunas */
+.col-md-6 {
+    margin-bottom: 30px;
+}
+
+/* Estilo para os cartões */
+.card {
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    background-color: #ffffff; /* Fundo branco para contraste */
+    color: #171716; /* Cor do texto */
+    margin: 20px;
+}
+
+/* Efeito de sombra suave nos cartões */
+.card.shadow-sm {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+.card.shadow-sm:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Efeito hover para realce */
+    transform: translateY(-5px); /* Efeito hover sutil */
+}
+
+/* Estilo para os títulos */
+.card h2 {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #044389; /* Azul forte para os títulos */
+    margin-bottom: 20px;
+}
+
+/* Estilo para o texto e lista */
+.text-muted {
+    color: #6c757d; /* Cinza claro para o texto */
+    line-height: 1.6;
+}
+
+/* Estilo para a lista */
+ul {
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+ul li {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: #666; /* Cor mais escura para os itens da lista */
+}
+
+/* Estilo responsivo */
+@media (max-width: 768px) {
+    .container-fluid {
+        padding: 20px;
+    }
+
+    .col-md-6 {
+        margin-bottom: 20px;
+    }
+
+    .card h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Botão de ação personalizado */
+.btn-primary {
+    background-color: #1273f3; /* Azul vibrante */
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.25rem;
+    border-radius: 50px;
+    color: #fff; /* Texto branco */
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0a5bb5; /* Tom mais escuro no hover */
+}
+
+/* Sombra ao passar o mouse nos itens da lista */
+ul li:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Estilo responsivo adicional para melhorar a experiência em telas pequenas */
+@media (max-width: 576px) {
+    .card h2 {
+        font-size: 1.25rem;
+    }
+
+    .text-muted {
+        font-size: 0.9rem;
+    }
+}
+
+

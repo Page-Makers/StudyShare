@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/login.css">
+  <title>Entrar</title>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="lado-esquerdo">
+    <video autoplay muted loop class="video-background">
+        <source src="/images/login.mp4" type="video/mp4">
+      Seu navegador não suporta este vídeo!
+    </video>
+
+    <div class="conteudo-lado-esquerdo">
+      <div class="logo">
+        <a href="/"><img src="/images/logo.png" alt="Logo"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="lado-direito">
+      <div class="login-form">
+        <div class="voltar">
+          <button onclick="history.back()"><img src="/images/seta.png" alt="Seta"></button>
+        </div>
+          <h3>Entrar na sua conta</h3>
+
+        <% if (typeof errorMessage !== 'undefined') { %>
+          <div class="error-message">
+            <p><%= errorMessage %></p>
+          </div>
+        <% } %>
+        
+         <form action="/login" method="POST">
+           <input type="email" name="email" placeholder="Email" required>
+           <input type="password" name="senha" placeholder="Senha" required>
+           <button type="submit">Entrar</button>
+         </form>
+          <p><a href="/recuperar">Esqueceu a senha?</a></p>
+
+        <div class="login-opcoes">
+            <button>
+              <div class="opcao-image">
+                <img src="/images/botao-google.png" alt="Google">
+              </div>
+              <div class="opcao-botao">
+                <p>Continue com o Google</p>
+              </div>
+            </button>
+            <button>
+              <div class="opcao-image">
+                <img src="/images/botao-github.png" alt="Github">
+              </div>
+              <div class="opcao-botao">
+                <p>Continue com o Github</p>
+              </div>
+            </button>
+            <button>
+              <div class="opcao-image">
+                <img src="/images/botao-facebook.png" alt="Facebook">
+              </div>
+              <div class="opcao-botao">
+                <p>Continue com o Facebook</p>
+              </div>
+            </button>
+            <button>
+              <div class="opcao-image">
+                <img src="/images/botao-apple.png" alt="Apple">
+              </div>
+              <div class="opcao-botao">
+                <p>Continue com a Apple</p>
+              </div>
+            </button>
+
+            <div class="criar-conta">
+              <p style= "font-size: 12px">Novo no StudyShare? <a href="/cadastrar" style= "font-size: 15px">Criar uma conta</a></p>
+            </div>
+
+            <div class="termos" id="termos">
+            <p style= "font-size: 12px",
+                "color: #424242">Ao fazer login no StudyShare, você está de acordo com nossos <a href="/termos" style= "font-size: 14px">Termos de uso</a> e <a href="/politica" style= "font-size: 14px">Política de privacidade</a>.</p>
+            </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+</body>
+</html>

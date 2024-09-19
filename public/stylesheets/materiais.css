@@ -1,0 +1,228 @@
+body {
+font-family: 'Lato', sans-serif;
+margin: 0;
+padding: 0;
+background-color: #f0f0f0;
+color: #203055;
+}
+
+.container {
+max-width: 1200px;
+margin: 25px auto;
+padding: 25px 50px;
+background-color: #ffffff;
+border-radius: 20px;
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+overflow: hidden;
+}
+
+/* Banner */
+.banner {
+position: relative;
+text-align: center;
+margin-bottom: 20px;
+border-radius: 10px;
+overflow: hidden;
+height: 250px;
+}
+.banner img{
+border-radius: 25px;
+}
+.banner-image{
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.banner-text {
+position: absolute;
+bottom: 20px;
+left: 20px;
+color: #ffffff;
+background-color: rgba(0, 0, 0, 0.1);
+padding: 10px 20px;
+border-radius: 5px;
+}
+
+.banner-text h1 {
+font-size: 2rem;
+margin: 0;
+}
+
+/* Conteúdos e Avaliações */
+section {
+display: flex;
+flex-wrap: wrap;
+gap: 20px; /* Espaçamento entre os itens */
+justify-content: center; /* Centraliza os itens horizontalmente */
+}
+
+.conteudos-avaliacoes {
+display: flex;
+flex-wrap: wrap;
+gap: 20px; /* Espaçamento entre os itens */
+justify-content: center; /* Centraliza os itens horizontalmente */
+max-width: 100%; /* Garante que os itens não ultrapassem a largura do container */
+}
+
+.caixa{
+flex: 1 1 400px; /* Aumenta o tamanho mínimo para 400px */
+max-width: 45%; /* Limita a largura máxima para garantir espaçamento */
+padding: 40px; /* Aumenta o padding para mais espaço interno */
+background-color: #ffffff;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0, 0, 0.2, 0.2);
+position: relative;
+text-align: center;
+transition: transform 0.3s ease;
+}
+
+.caixa:hover {
+background-color: #f0f0f0;
+transform: scale(1.05);
+}
+
+.caixa img{
+width: 100%;
+height: auto;
+border-top-left-radius: 8px;
+border-top-right-radius: 8px;
+}
+
+.caixa a {
+text-decoration: none;
+color: #333;
+display: block;
+padding: 10px;
+}
+
+.caixa a:hover {
+background-color: #f0f0f0;
+border-radius: 8px;
+}
+
+/* Overlay para descrição */
+.fundo .overlay {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: #203055;
+display: none;
+justify-content: center;
+align-items: center;
+box-sizing: border-box;
+border-radius: 8px;
+color: #ffffff;
+font-size: 16px;
+padding: 20px;
+text-align: center;
+}
+
+.caixa:hover .overlay{
+display: flex;
+}
+
+/* Botão Seguir */
+.follow-btn {
+background-color: #0251ed;
+color: white;
+border: none;
+padding: 10px 20px;
+border-radius: 10px;
+cursor: pointer;
+transition: background-color 0.4s;
+height: 35px;
+}
+
+.follow-btn:hover {
+background-color: #153774;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+.container {
+margin: 15px;
+padding: 15px;
+}
+
+.caixa {
+padding: 10px;
+margin: 10px 0;
+flex: 1 1 100%; /* Ajusta os itens para ocupar toda a largura em telas menores */
+width: 150px; /* Garante que ocupem toda a largura disponível */
+}
+
+section {
+flex-direction: column; /* Empilha os itens em telas menores */
+}
+}
+
+@media (max-width: 480px) {
+.caixa {
+padding: 20px;
+margin: 5px 0;
+}
+}
+
+
+
+/* Caminho de Navegação */
+.breadcrumb-container {
+padding: 15px 20px;
+background-color: #ffffff;
+border: 1px solid #ddd;
+border-radius: 8px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+margin-bottom: 20px;
+}
+
+.breadcrumb-container a {
+color: #3498db;
+text-decoration: none;
+font-size: 16px;
+font-weight: 500;
+transition: color 0.3s ease;
+}
+
+.breadcrumb-container a:hover {
+color: #2980b9;
+}
+
+.breadcrumb-container .separator {
+color: #999;
+margin: 0 8px;
+}
+
+.breadcrumb-container span {
+color: #333;
+}
+
+.breadcrumb-container::before {
+content: "\f053"; /* Ícone de seta para o lado (FontAwesome) */
+font-family: "Font Awesome 5 Free";
+font-weight: 900;
+color: #999;
+margin-right: 8px;
+}
+
+.breadcrumb-container span:first-child::before {
+content: "";
+}
+
+.breadcrumb-container .current {
+font-weight: bold;
+color: #333;
+}
+
+/* Ajustes para telas pequenas */
+@media (max-width: 768px) {
+.breadcrumb-container {
+padding: 10px 15px;
+font-size: 14px;
+}
+}
+.sidebar a{
+text-decoration:none;
+}

@@ -6,17 +6,23 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "@firebase/firestore": "^4.6.3",
     "@popperjs/core": "^2.11.8",
     "body-parser": "^1.20.2",
     "bootstrap": "^5.3.3",
+    "connect-flash": "^0.1.1",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
     "ejs": "~2.6.1",
     "express": "~4.16.1",
-    "firebase": "^10.10.0",
+    "express-generator": "^4.16.1",
+    "express-session": "^1.18.0",
+    "firebase": "^10.12.2",
+    "firebase-admin": "^12.1.1",
     "http-errors": "~1.6.3",
     "jquery": "^3.6.0",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "nodemon": "^3.1.3"
   }
 }

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyShare</title>
+    <link rel="stylesheet" href="/stylesheets/menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="menu-left">
+            <button id="openSidebarBtn"><i class="fas fa-bars"></i></button>
+        </div>
+        <div class="logo">
+            <a href="/">
+                <img src="/images/logo.png" alt="Logo do Site">
+            </a>
+        </div>
+        <div class="menu-right" id="menu-cima">
+            <button><a href="/">Início</a></button>
+            <button><a href="/periodos">Períodos</a></button>
+            <button><a href="/login">Entrar</a></button>
+            <button><a href="/cadastrar">Cadastrar</a></button>
+        </div>
+    </header>
+    <div id="sidebar" class="sidebar">
+        <button id="closeSidebarBtn" class="closebtn">&times;</button>
+        <div class="logo">
+            <a href="/">
+                <img src="/images/logo.png" alt="Logo do Site">
+            </a>
+        </div>
+        <div class="periodos-container">
+            <div class="periodo">
+                <h3>1º Período</h3>
+                <ul>
+                    <li><a href="/materiais/p1/intro-prog">Introdução à Programação</a></li>
+                </ul>
+            </div>
+            <div class="periodo">
+                <h3>2º Período</h3>
+                <ul>
+                    <li><a href="/materiais/p2/admso">Administração de Sistemas Operacionais</a></li>
+                    <li><a href="/materiais/p2/fund-prog-1">Fundamentos de Programação I</a></li>
+                </ul>
+            </div>
+            <div class="periodo">
+                <h3>3º Período</h3>
+                <ul>
+                    <li><a href="/materiais/p3/fund-prog-2">Fundamentos de Programação II</a></li>
+                    <li><a href="/materiais/p3/poo">Programação Orientada a Objetos</a></li>
+                </ul>
+            </div>
+            <div class="periodo">
+                <h3>4º Período</h3>
+                <ul>
+                    <li><a href="/materiais/p4/bd">Bancos de Dados</a></li>
+                    <li><a href="/materiais/p4/mfds">Métodos e Ferramentas para Desenvolvimento de Software</a></li>
+                    <li><a href="/materiais/p4/pp1">Prática Profissional I</a></li>
+                    <li><a href="/materiais/p4/prog-mov1">Programação de Dispositivos Móveis I</a></li>
+                    <li><a href="/materiais/p4/redes">Redes de Computadores</a></li>
+                </ul>
+            </div>
+            <div class="periodo">
+                <h3>5º Período</h3>
+                <ul>
+                    <li><a href="/materiais/p5/eletro-info">Eletrônica para Informática</a></li>
+                    <li><a href="/materiais/p5/pp2">Prática Profissional II</a></li>
+                    <li><a href="/materiais/p5/prog-mov2">Programação de Dispositivos Móveis II</a></li>
+                    <li><a href="/materiais/p5/prog-web1">Programação Web I</a></li>
+                </ul>
+            </div>
+            <div class="periodo">
+                <h3>6º Período</h3>
+                <ul>
+                    <li><a href="/materiais/p6/intro-seg-ciber">Introdução à Segurança Cibernética</a></li>
+                    <li><a href="/materiais/p6/pp3">Prática Profissional III</a></li>
+                    <li><a href="/materiais/p6/prog-web2">Programação Web II</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="rodape-direitos">
+            <div class="r-direitos">
+                <a href="#">&copy;2024 StudyShare</a>
+                <a href="#terms">Termos de uso</a>
+                <a href="#privacy">Política de Privacidade</a>
+                <a href="#cookies">Aviso de cookies</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById("openSidebarBtn").addEventListener("click", function() {
+            document.getElementById("sidebar").style.width = "100%";
+        });
+
+        document.getElementById("closeSidebarBtn").addEventListener("click", function() {
+            document.getElementById("sidebar").style.width = "0";
+        });
+
+        // Mantendo o menu fixo ao rolar a página
+        window.addEventListener('scroll', function() {
+            var header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+
+        document.getElementById("openSidebarBtn").addEventListener("click", function() {
+            document.getElementById("sidebar").style.width = "100%";
+        });
+
+        document.getElementById("closeSidebarBtn").addEventListener("click", function() {
+            document.getElementById("sidebar").style.width = "0";
+        });
+
+        document.getElementById("notificationsBtn").addEventListener("click", function() {
+            document.getElementById("notificationsPanel").classList.toggle("show");
+        });
+
+        document.getElementById("closeNotificationsBtn").addEventListener("click", function() {
+            document.getElementById("notificationsPanel").classList.remove("show");
+        });
+
+        // Mantendo o menu fixo ao rolar a página
+        window.addEventListener('scroll', function() {
+            var header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+
+    </script>
+</body>
+</html>

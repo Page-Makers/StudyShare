@@ -1,0 +1,129 @@
+/* Reset de margens e paddings */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+/* Estilo geral do footer */
+footer {
+background-color: #044389;
+color: #ffffff;
+padding: 20px 0;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-container {
+max-width: 1200px;
+margin: 0 auto;
+display: flex;
+justify-content: space-between;
+align-items: flex-start; /* Alinha os itens no topo verticalmente */
+flex-wrap: wrap;
+}
+
+.footer-section {
+flex: 1 1 300px;
+margin-bottom: 20px;
+}
+
+.footer-logo {
+display: flex;
+align-items: center; /* Centraliza verticalmente */
+}
+
+.footer-logo img {
+margin-top:50px;
+margin-left:50px;
+width: 200px; /* Ajuste conforme necessário */
+}
+
+.footer-section h3 {
+font-size: 25px;
+margin-bottom: 10px;
+color: #FCFF4B;
+text-align: center;
+}
+
+.footer-section p {
+font-size: 16px;
+line-height: 1.6;
+text-align: center;
+}
+
+.footer-social {
+flex: 1 1 200px; /* Ajuste de largura */
+text-align: center;
+}
+
+.footer-social h3,
+.footer-contact h3,
+.footer-sitemap h3 {
+font-size: 25px;
+margin-bottom: 10px;
+color: #FCFF4B;
+text-align: center;
+}
+
+.footer-social a i {
+font-size: 24px;
+margin-right: 10px;
+color: #ffffff;
+text-align: center;
+}
+
+.footer-social a i:hover {
+color: #FCFF4B; /* Amarelo da paleta */
+}
+
+.footer-contact,
+.footer-social,
+.footer-sitemap {
+flex: 1 1 300px; /* Distribuição igual de largura */
+}
+
+.footer-sitemap ul {
+list-style-type: none;
+padding: 0;
+text-align: center;
+}
+
+.footer-sitemap ul li {
+margin-bottom: 8px;
+text-align: center;
+}
+
+.footer-sitemap ul li a {
+padding:none;
+color: #ffffff;
+text-decoration: none;
+transition: color 0.3s ease;
+text-align: center;
+}
+
+.footer-sitemap ul li a:hover {
+color: #FCFF4B; /* Amarelo da paleta */
+}
+
+.rodape-direitos {
+background-color:  #203055; /* Azul mais claro da paleta */
+padding: 10px 0;
+margin-left: 70px;
+margin-right: 70px;
+text-align: center;
+border-radius: 50px; /* Ajustado para ser metade da altura para um círculo */
+margin-top: 10px; /* Espaçamento do topo */
+margin-bottom:10px;
+}
+
+.rodape-direitos .r-direitos a {
+color: #ffffff;
+text-decoration: none;
+margin: 0 10px;
+font-size: 14px;
+transition: color 0.3s ease;
+}
+
+.rodape-direitos .r-direitos a:hover {
+color: #FCFF4B; /* Amarelo da paleta */
+}

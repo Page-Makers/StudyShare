@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/stylesheets/login.css">
+<title>Recuperar Senha</title>
+</head>
+
+<body>
+
+  <div class="container">
+      <div class="lado-esquerdo">
+        <video autoplay muted loop class="video-background">
+            <source src="/images/login.mp4" type="video/mp4">
+            Seu navegador não suporta este vídeo.
+        </video>
+
+      <div class="conteudo-lado-esquerdo">
+      <div class="logo">
+        <a href="/"><img src="/images/logo.png" alt="Logo"></a>
+      </div>
+      </div>
+    </div>
+
+    <div class="lado-direito">
+        <div class="login-form" id="email-form">
+          <div class="voltar">
+            <button onclick="history.back()"><img src="/images/seta.png" alt="Seta"></button>
+          </div>
+
+            <h3>Informe seu Email</h3>
+            <% if (successMessage) { %>
+                <div class="alert alert-success"><%= successMessage %></div>
+            <% } %>
+            <% if (errorMessage) { %>
+                <div class="alert alert-danger"><%= errorMessage %></div>
+            <% } %>
+            <form action="/recuperar" method="POST">
+              <input type="email" name="email" placeholder="Email" required>
+              <button type="submit">Enviar Código</button>
+            </form>
+        </div>
+
+        <div class="login-form" id="verification-form" style="display: none;">
+          <div class="voltar">
+            <button onclick="showEmailForm()"><img src="/images/seta.png" alt="Seta"></button>
+          </div>
+
+            <h3>Confirme o Código de Verificação</h3>
+            <form action="/verificar-codigo" method="POST">
+              <input type="text" name="codigo" placeholder="Código" required>
+              <button type="submit">Verificar</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    function showVerification() {
+        var emailForm = document.getElementById("email-form");
+        var verificationForm = document.getElementById("verification-form");
+
+        emailForm.style.display = "none";
+        verificationForm.style.display = "block";
+    }
+
+    function showEmailForm() {
+        var emailForm = document.getElementById("email-form");
+        var verificationForm = document.getElementById("verification-form");
+
+        emailForm.style.display = "block";
+        verificationForm.style.display = "none";
+    }
+</script>
+</body>
+</html>

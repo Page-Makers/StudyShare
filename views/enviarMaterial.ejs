@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Envio de Materiais</title>
+<link rel="stylesheet" href="/stylesheets/enviarMaterial.css">
+</head>
+<body>
+<div class="container">
+  <video autoplay muted loop class="video-background">
+      <source src="/images/material.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+  </video>
+
+  <div class="logo">
+    <a href="/"><img src="/images/logo.png" alt="Logo"></a>
+  </div>
+  <h2>Enviar Material</h2>
+  <form id="upload-form" enctype="multipart/form-data">
+    <label for="disciplina">Disciplina:</label>
+    <select id="disciplina" name="disciplina">
+      <option value="">Selecione a Disciplina</option>
+      <option value="Introdução à Programação">Introdução à Programação</option>
+      <option value="Administração de Sistemas Operacionais">Administração de Sistemas Operacionais</option>
+      <option value="Fundamentos de Programação I">Fundamentos de Programação I</option>
+      <option value="Fundamentos de Programação II">Fundamentos de Programação II</option>
+      <option value="Programação Orientada a Objetos">Programação Orientada a Objetos</option>
+      <option value="Bancos de Dados">Bancos de Dados</option>
+      <option value="Métodos e Ferramentas para Desenvolvimento de Software">Métodos e Ferramentas para Desenvolvimento de Software</option>
+      <option value="Programação de Dispositivos Móveis I">Programação de Dispositivos Móveis I</option>
+      <option value="Prática Profissional I">Prática Profissional I</option>
+      <option value="Redes de Computadores">Redes de Computadores</option>
+      <option value="Eletrônica para Informática">Eletrônica para Informática</option>
+      <option value="Prática Profissional II">Prática Profissional II</option>
+      <option value="Programação de Dispositivos Móveis II">Programação de Dispositivos Móveis II</option>
+      <option value="Programação Web I">Programação Web I</option>
+      <option value="Introdução à Segurança Cibernética">Introdução à Segurança Cibernética</option>
+      <option value="Prática Profissional III">Prática Profissional III</option>
+      <option value="Programação Web II">Programação Web II</option>
+    </select>
+    <label for="tipo">Tipo de Material:</label>
+    <select id="tipo" name="tipo">
+      <option value="">Selecione o Tipo</option>
+      <option value="conteudo">Conteúdo</option>
+      <option value="avaliacao">Avaliação</option>
+    </select>
+    <label for="arquivos">Selecionar Arquivos:</label>
+    <input type="file" id="arquivos" name="arquivos" multiple>
+    <label for="link">Quer compartilhar um projeto? Insira o link aqui:</label>
+    <input type="text" id="link" name="link" placeholder="Link">
+    <button type="submit">Enviar</button>
+  </form>
+</div>
+<script src="/javascripts/enviarMaterial.js" type="module"></script>
+</body>
+</html>
