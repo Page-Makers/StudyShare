@@ -1,0 +1,90 @@
+<link rel="stylesheet" href="/stylesheets/conteudo.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+  <%- include('./partials/navBarSemLogin.ejs') %>
+
+  <section>
+    <div class="container">
+      <div class="nome-disciplina" id="nome-da-disciplina">
+        <h3>Prática Profissional I</h3>
+      </div>
+
+      <div class="row">
+        <div class="col-md-7">
+          <div class="content-box first" id="main-content">
+            <div class="capa-disciplina">
+              <img src="/images/pp1.jpg" alt="Integração de Fundamentos de Programação II e Programação Orientada a Objetos">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <div class="content-box second">
+
+            <div class="titulo-conteudo">
+              <h3>Conteúdos</h3>
+            </div>
+
+            <ul>
+              <li><a href="#" onclick="changeContent('Swift')">Swift</a></li>
+              <li><a href="#" onclick="changeContent('Revisão de conteúdos')">Revisão de conteúdos</a></li>
+              <li><a href="#" onclick="changeContent('Construção de protótipos')">Construção de protótipos</a></li>
+              <li><a href="#" onclick="changeContent('Apresentação de protótipos')">Apresentação de protótipos</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+      function changeContent(contentType) {
+        var contentBox = document.getElementById('main-content');
+
+        switch (contentType) {
+          case 'Swift':
+            contentBox.innerHTML = `
+              <h2>Swift</h2>
+              <p>Swift é uma linguagem de programação criada pela Apple para desenvolvimento de aplicativos iOS, macOS, watchOS e tvOS. Ela é moderna, poderosa e fácil de aprender, com sintaxe concisa e segurança de tipo.</p>
+            `;
+            break;
+
+          case 'Revisão de conteúdos':
+            contentBox.innerHTML = `
+              <h2>Revisão de conteúdos</h2>
+              <p>A revisão de conteúdos de Fundamentos de Programação II e Programação Orientada a Objetos inclui recapitulação dos conceitos fundamentais dessas disciplinas, como tipos de dados, estruturas de controle, orientação a objetos, classes, herança, polimorfismo, entre outros.</p>
+            `;
+            break;
+
+          case 'Construção de protótipos':
+            contentBox.innerHTML = `
+              <h2>Construção de protótipos</h2>
+              <p>A construção de protótipos é uma etapa essencial no desenvolvimento de software, onde são criadas versões simplificadas do produto para validar ideias, testar funcionalidades e obter feedback dos usuários antes da implementação completa.</p>
+            `;
+            break;
+
+          case 'Apresentação de protótipos':
+            contentBox.innerHTML = `
+              <h2>Apresentação de protótipos</h2>
+              <p>A apresentação de protótipos é o processo de mostrar os protótipos desenvolvidos para stakeholders, clientes ou usuários finais. Isso permite avaliar a usabilidade, identificar problemas e tomar decisões informadas sobre o desenvolvimento do produto.</p>
+            `;
+            break;
+
+          default:
+            break;
+        }
+      }
+    </script>
+  </section>
+
+  <footer><%- include('./partials/footer.ejs') %></footer>
+
+</body>
+
+</html>

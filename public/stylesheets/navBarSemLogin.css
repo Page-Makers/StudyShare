@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+* {
+    padding: 0px;
+    margin: 0;
+    font-family: 'Poppins', monospace;
+}
+
+.menu{
+  background: #102B62;
+}
+
+
+.logo-menu {
+  display: flex;
+  justify-content: center;
+}
+
+nav{
+  margin-left:40px;
+  margin-right:40px;
+}
+
+.logo-menu img{
+  width: 150px;
+  height: 30px;
+  margin-top: 20px;
+}
+
+nav ul {
+    list-style: none;
+    justify-content: space-between;
+    display: flex;
+}
+nav ul li {
+    display: inline-block;
+    position: relative;
+}
+nav ul li:first-child {
+    margin-right:auto;
+}
+nav ul li:last-child {
+    margin-left:auto;
+}
+nav ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: #FFF;
+    text-decoration: none;
+    text-align: center;
+    font-size: 15px;
+}
+nav ul li ul.dropdown li {
+    display: block;
+    box-shadow: 0 1px 1px rgba(0, 0, 1, 1.1);
+    box-shadow: none;
+
+}
+nav ul li ul.dropdown {
+    width: 100%;
+    background: #102B62;
+    position: absolute;
+    z-index: 999;
+    display: none;
+    width: max-content;
+    border-radius: 0px 0px 2px 2px;
+    transition: all 0.4s ease;
+}
+nav ul li a:hover {
+    color: #1273f3;
+    text-decoration: none;
+}
+nav ul li:hover ul.dropdown {
+    display: block;
+}

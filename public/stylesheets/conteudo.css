@@ -1,0 +1,92 @@
+body{
+  margin: 0;
+  background-color: #f0f0f0;
+}
+.container{
+  margin-top: 25px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 25px;
+}
+
+.nome-disciplina h3{
+  color: #424242;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 20px;
+  letter-spacing: 2px;
+}
+
+
+.titulo-conteudo h3{
+  color: #102B62;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 20px;
+  letter-spacing: 2px;
+}
+
+
+.capa-disciplina img {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0px;
+  filter: brightness(0.9);
+}
+
+
+.content-box ul {
+  list-style-type: none;
+}
+
+.row{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.col-md-7 {
+  background-color: #ffff;
+  box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  margin-bottom: 10px;
+  padding: 10px; 
+  overflow: hidden; 
+  position: relative; 
+}
+
+.col-md-7 img {
+  position: absolute; 
+  width: 110%;
+  height: 110%; 
+  object-fit: cover; 
+  top: 0;
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+}
+
+
+.content-box ul li {
+  background-color: #ffff;
+  box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  margin-bottom: 10px;
+  padding: 10px; 
+}
+
+.content-box ul li a {
+  text-decoration: none; 
+  color: #1273f3;
+}
+
+.content-box ul li:hover {
+  background-color: #1273f3; 
+}
+
+.content-box ul li:hover a {
+  color: white;
+}

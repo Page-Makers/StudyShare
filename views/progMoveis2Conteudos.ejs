@@ -1,0 +1,123 @@
+
+  <link rel="stylesheet" href="/stylesheets/conteudo.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+  <%- include('./partials/navBarSemLogin.ejs') %>
+
+  <section>
+    <div class="container">
+      <div class="nome-disciplina" id="nome-da-disciplina">
+        <h3>Programação de Dispositivos Móveis II</h3>
+      </div>
+
+      <div class="row">
+        <div class="col-md-7">
+          <div class="content-box first" id="main-content">
+            <div class="capa-disciplina">
+              <img src="/images/progMoveis2.jpg" alt="Programação de Dispositivos Móveis II">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <div class="content-box second">
+
+            <div class="titulo-conteudo">
+              <h3>Conteúdos</h3>
+            </div>
+
+            <ul>
+              <li><a href="#" onclick="changeContent('Android')">Android</a></li>
+              <li><a href="#" onclick="changeContent('Kotlin')">Kotlin</a></li>
+              <li><a href="#" onclick="changeContent('Componentes e navegação de interface gráfica')">Componentes e navegação de interface gráfica</a></li>
+              <li><a href="#" onclick="changeContent('Persistência de dados local')">Persistência de dados local</a></li>
+              <li><a href="#" onclick="changeContent('Mapas')">Mapas</a></li>
+              <li><a href="#" onclick="changeContent('Gestos')">Gestos</a></li>
+              <li><a href="#" onclick="changeContent('Sensores')">Sensores</a></li>
+              <li><a href="#" onclick="changeContent('Consulta de APIs Web')">Consulta de APIs Web</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+      function changeContent(contentType) {
+        var contentBox = document.getElementById('main-content');
+
+        switch (contentType) {
+          case 'Android':
+            contentBox.innerHTML = `
+              <h2>Android</h2>
+              <p>O Android é um sistema operacional móvel baseado no kernel Linux e desenvolvido pela Google. É amplamente utilizado para o desenvolvimento de aplicativos móveis para smartphones, tablets, smartwatches e outros dispositivos.</p>
+            `;
+            break;
+
+          case 'Kotlin':
+            contentBox.innerHTML = `
+              <h2>Kotlin</h2>
+              <p>O Kotlin é uma linguagem de programação moderna, concisa e expressiva, desenvolvida pela JetBrains. É uma das linguagens recomendadas para o desenvolvimento de aplicativos Android, oferecendo interoperabilidade total com o Java.</p>
+            `;
+            break;
+
+          case 'Componentes e navegação de interface gráfica':
+            contentBox.innerHTML = `
+              <h2>Componentes e navegação de interface gráfica</h2>
+              <p>Este tópico aborda os principais componentes de interface gráfica disponíveis no Android, como botões, campos de texto, listas, barras de navegação, entre outros. Além disso, explora técnicas de navegação entre telas e fragmentos.</p>
+            `;
+            break;
+
+          case 'Persistência de dados local':
+            contentBox.innerHTML = `
+              <h2>Persistência de dados local</h2>
+              <p>A persistência de dados local é essencial para o armazenamento de informações em aplicativos móveis mesmo quando estão offline. Neste tópico, são discutidas técnicas e APIs para armazenamento de dados localmente, como SharedPreferences, SQLite e Room.</p>
+            `;
+            break;
+
+          case 'Mapas':
+            contentBox.innerHTML = `
+              <h2>Mapas</h2>
+              <p>A integração de mapas em aplicativos móveis é comum em diversas aplicações, desde aplicativos de transporte até guias turísticos. Neste tópico, são abordadas as APIs de mapas do Google e outras plataformas para visualização e interação com mapas em aplicativos Android.</p>
+            `;
+            break;
+
+          case 'Gestos':
+            contentBox.innerHTML = `
+              <h2>Gestos</h2>
+              <p>Os gestos são interações baseadas em toque realizadas pelos usuários em dispositivos móveis. Este tópico explora como reconhecer e responder a gestos como toque simples, toque longo, deslizar, pinçar, entre outros, em aplicativos Android.</p>
+            `;
+            break;
+
+          case 'Sensores':
+            contentBox.innerHTML = `
+              <h2>Sensores</h2>
+              <p>Os dispositivos móveis estão equipados com uma variedade de sensores que podem ser utilizados para diversas finalidades em aplicativos. Neste tópico, são exploradas as APIs para acesso e utilização de sensores como acelerômetro, giroscópio, GPS, entre outros, em aplicativos Android.</p>
+            `;
+            break;
+
+          case 'Consulta de APIs Web':
+            contentBox.innerHTML = `
+              <h2>Consulta de APIs Web</h2>
+              <p>A integração de APIs web em aplicativos móveis é essencial para acessar e consumir serviços e dados externos. Neste tópico, são discutidas técnicas para realizar consultas a APIs web, processar respostas e exibir dados em aplicativos Android.</p>
+            `;
+            break;
+
+          default:
+            break;
+        }
+      }
+    </script>
+  </section>
+
+  <footer><%- include('./partials/footer.ejs') %></footer>
+
+</body>
+
+</html>

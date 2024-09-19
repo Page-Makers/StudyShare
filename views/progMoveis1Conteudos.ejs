@@ -1,0 +1,82 @@
+<link rel="stylesheet" href="/stylesheets/conteudo.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+  <%- include('./partials/navBarSemLogin.ejs') %>
+
+  <section>
+    <div class="container">
+      <div class="nome-disciplina" id="nome-da-disciplina">
+        <h3>Programação de Dispositivos Móveis I</h3>
+      </div>
+
+      <div class="row">
+        <div class="col-md-7">
+          <div class="content-box first" id="main-content">
+            <div class="capa-disciplina">
+              <img src="/images/progMoveis1.jpg" alt="Programação de Dispositivos Móveis I">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <div class="content-box second">
+
+            <div class="titulo-conteudo">
+              <h3>Conteúdos</h3>
+            </div>
+
+            <ul>
+              <li><a href="#" onclick="changeContent('Conhecer e aplicar técnicas de desenvolvimento de aplicativos (Apps) para dispositivos móveis')">Conhecer e aplicar técnicas de desenvolvimento de aplicativos (Apps) para dispositivos móveis</a></li>
+              <li><a href="#" onclick="changeContent('Desenvolver aplicativos utilizando a linguagem Swift')">Desenvolver aplicativos utilizando a linguagem Swift</a></li>
+              <li><a href="#" onclick="changeContent('Aplicar os conhecimentos no ambiente de aprendizado Playground e também no ambiente de desenvolvimento integrado Xcode')">Aplicar os conhecimentos no ambiente de aprendizado Playground e também no ambiente de desenvolvimento integrado Xcode</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+      function changeContent(contentType) {
+        var contentBox = document.getElementById('main-content');
+
+        switch (contentType) {
+          case 'Conhecer e aplicar técnicas de desenvolvimento de aplicativos (Apps) para dispositivos móveis':
+            contentBox.innerHTML = `
+              <h2>Conhecer e aplicar técnicas de desenvolvimento de aplicativos (Apps) para dispositivos móveis</h2>
+              <p>Esta disciplina aborda técnicas de desenvolvimento de aplicativos móveis, incluindo conceitos de design de interface, interação com o usuário e integração de recursos do dispositivo. Os alunos aprenderão a criar aplicativos eficientes e user-friendly para dispositivos móveis.</p>
+            `;
+            break;
+
+          case 'Desenvolver aplicativos utilizando a linguagem Swift':
+            contentBox.innerHTML = `
+              <h2>Desenvolver aplicativos utilizando a linguagem Swift</h2>
+              <p>Swift é a linguagem de programação padrão para desenvolvimento de aplicativos iOS, macOS, watchOS e tvOS. Nesta disciplina, os alunos aprenderão a utilizar a linguagem Swift para criar aplicativos móveis inovadores e de alta qualidade.</p>
+            `;
+            break;
+
+          case 'Aplicar os conhecimentos no ambiente de aprendizado Playground e também no ambiente de desenvolvimento integrado Xcode':
+            contentBox.innerHTML = `
+              <h2>Aplicar os conhecimentos no ambiente de aprendizado Playground e também no ambiente de desenvolvimento integrado Xcode</h2>
+              <p>O Playground é um ambiente de aprendizado interativo fornecido pela Apple para experimentar e testar código Swift de forma rápida e fácil. Já o Xcode é o ambiente de desenvolvimento integrado (IDE) utilizado para criar, depurar e implantar aplicativos Swift em dispositivos Apple.</p>
+            `;
+            break;
+
+          default:
+            break;
+        }
+      }
+    </script>
+  </section>
+
+  <footer><%- include('./partials/footer.ejs') %></footer>
+
+</body>
+
+</html>

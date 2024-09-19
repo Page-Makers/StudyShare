@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="/stylesheets/conteudo.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+  <%- include('./partials/navBarSemLogin.ejs') %>
+
+  <section>
+    <div class="container">
+      <div class="nome-disciplina" id="nome-da-disciplina">
+        <h3>Banco de Dados</h3>
+      </div>
+
+      <div class="row">
+        <div class="col-md-7">
+          <div class="content-box first" id="main-content">
+            <div class="capa-disciplina">
+              <img src="/images/bd.jpg" alt="Banco de Dados">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <div class="content-box second">
+
+            <div class="titulo-conteudo">
+              <h3>Conteúdos</h3>
+            </div>
+
+            <ul>
+              <li><a href="#" onclick="changeContent('Arquitetura de Banco de Dados')">Arquitetura de Banco de Dados</a></li>
+              <li><a href="#" onclick="changeContent('Modelagem de Banco de Dados: Modelo Entidade-Relacionamento, Modelo Relacional e Modelo Não-Relacional')">Modelagem de Banco de Dados: Modelo Entidade-Relacionamento, Modelo Relacional e Modelo Não-Relacional</a></li>
+              <li><a href="#" onclick="changeContent('Normalização de Banco de Dados')">Normalização de Banco de Dados</a></li>
+              <li><a href="#" onclick="changeContent('Modelo, Linguagem de consulta (SQL e NoSQL - scripts de criação de banco de dados, inserção, alteração, exclusão e consulta de dados)')">Modelo, Linguagem de consulta (SQL e NoSQL - scripts de criação de banco de dados, inserção, alteração, exclusão e consulta de dados)</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+      function changeContent(contentType) {
+        var contentBox = document.getElementById('main-content');
+
+        switch (contentType) {
+          case 'Arquitetura de Banco de Dados':
+            contentBox.innerHTML = `
+              <h2>Arquitetura de Banco de Dados</h2>
+              <p>A arquitetura de banco de dados refere-se à estrutura geral de um sistema de gerenciamento de banco de dados (SGBD), incluindo seus componentes físicos e lógicos. Isso inclui o armazenamento de dados, a recuperação de informações e a segurança dos dados.</p>
+            `;
+            break;
+
+          case 'Modelagem de Banco de Dados: Modelo Entidade-Relacionamento, Modelo Relacional e Modelo Não-Relacional':
+            contentBox.innerHTML = `
+              <h2>Modelagem de Banco de Dados</h2>
+              <p>A modelagem de banco de dados envolve a representação dos dados e das relações entre eles. Os modelos mais comuns são o modelo Entidade-Relacionamento (ER), que descreve entidades e seus relacionamentos, o modelo Relacional, baseado em tabelas e chaves estrangeiras, e o modelo Não-Relacional, que inclui bancos de dados NoSQL.</p>
+            `;
+            break;
+
+          case 'Normalização de Banco de Dados':
+            contentBox.innerHTML = `
+              <h2>Normalização de Banco de Dados</h2>
+              <p>A normalização de banco de dados é o processo de organizar os dados em uma estrutura lógica eficiente, minimizando a redundância e a dependência. Isso é alcançado dividindo as tabelas em partes menores e mais coesas e estabelecendo relações claras entre elas.</p>
+            `;
+            break;
+
+          case 'Modelo, Linguagem de consulta (SQL e NoSQL - scripts de criação de banco de dados, inserção, alteração, exclusão e consulta de dados)':
+            contentBox.innerHTML = `
+              <h2>Modelo, Linguagem de consulta (SQL e NoSQL)</h2>
+              <p>A linguagem de consulta estruturada (SQL) e as linguagens NoSQL são utilizadas para interagir com bancos de dados. Elas permitem a criação, inserção, alteração, exclusão e consulta de dados em bancos de dados relacionais e não relacionais.</p>
+            `;
+            break;
+
+          default:
+            break;
+        }
+      }
+    </script>
+  </section>
+
+  <footer><%- include('./partials/footer.ejs') %></footer>
+
+</body>
+
+</html>

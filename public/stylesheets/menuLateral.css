@@ -1,0 +1,80 @@
+.sidebar {
+  height: calc(100% - 40px); 
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #102B62;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar .mySideBar {
+  padding: 20px;
+}
+
+.sidebar a {
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 12px;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #1273f3;
+  text-decoration: none;
+}
+
+.barra-pesquisa{
+  padding: 10px;
+}
+
+.barra-pesquisa input{
+  width: 180px;
+  height: 20px;
+  border-radius: 50px;
+  padding:20px;
+}
+
+.barra-pesquisa input[type="text"] {
+    border: none; 
+    padding: 5px; 
+    outline: none;
+  
+}
+
+.menu-lateral{
+  padding: 20px;
+}
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px 15px;
+  border: none;
+}
+
+
+button{
+  background-color: #102B62;
+  border: none;
+}
+
+.botao-menu img{
+  width: 20px;
+  height: 20px;
+}
+
+.lista a{
+  color: #ffff;
+}

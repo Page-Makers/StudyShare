@@ -1,0 +1,48 @@
+<%- include('./partials/navBarSemLogin.ejs') %>
+<link rel="stylesheet" href="/stylesheets/disciplina.css">
+
+  <div class="container">
+
+  <div class="nome-disciplina">
+    <h1>Programação de Dispositivos Móveis II</h1>
+    <button id="botaoSeguir" type="button" onclick="seguirDisciplina()">Seguir</button>
+  </div>
+
+  <section>
+
+  <div class="conteudos-avaliacoes">
+
+        <div class="conteudos" name="conteudos">
+          <div class="fundo">
+            <a href="/conteudos/progMoveis2" target="_self">
+              <img src="/images/conteudos.png" alt="progMoveis2">
+              <p class="maiusculo">Conteúdos</p>
+            </a>
+             <a href="/conteudos/progMoveis2" target="_self">
+            <div class="overlay"><p>Aqui você encontra conteúdos da disciplina</p></div>
+             </a>
+          </div>
+        </div>
+
+        <div class="avaliacoes" name="avaliacoes">
+          <div class="fundo">
+            <a href="/avaliacoes/progMoveis2" target="_self">
+              <img src="/images/avaliacoes.png" alt="progMoveis2">
+              <p class="maiusculo">Avaliações</p>
+            </a>
+            <a href="/avaliacoes/progMoveis2" target="_self">
+            <div class="overlay"><p>Aqui você encontra avaliações da disciplina  </p></div>
+            </a>
+          </div>
+      </div>
+
+      </div>
+  </section>
+</div>
+  <footer><%- include('./partials/footer.ejs') %></footer>
+  <script src="/javascripts/botaoSeguir.js"></script>
+</body>
+</html>
+
+
+  <!--<a target="_blank" href="https://icons8.com/icon/38854/books">Books</a> ícone por <a target="_blank" href="https://icons8.com">Icons8</a>-->

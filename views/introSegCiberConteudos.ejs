@@ -1,0 +1,99 @@
+
+  <link rel="stylesheet" href="/stylesheets/conteudo.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+  <%- include('./partials/navBarSemLogin.ejs') %>
+
+  <section>
+    <div class="container">
+      <div class="nome-disciplina" id="nome-da-disciplina">
+        <h3>Introdução à Segurança Cibernética</h3>
+      </div>
+
+      <div class="row">
+        <div class="col-md-7">
+          <div class="content-box first" id="main-content">
+            <div class="capa-disciplina">
+              <img src="/images/introSegCiber.jpg" alt="Introdução à Segurança Cibernética">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <div class="content-box second">
+
+            <div class="titulo-conteudo">
+              <h3>Conteúdos</h3>
+            </div>
+
+            <ul>
+              <li><a href="#" onclick="changeContent('Conceitos fundamentais de segurança cibernética')">Conceitos fundamentais de segurança cibernética</a></li>
+              <li><a href="#" onclick="changeContent('Criptografia e certificados digitais')">Criptografia e certificados digitais</a></li>
+              <li><a href="#" onclick="changeContent('Aspectos de segurança da arquitetura TCP/IP')">Aspectos de segurança da arquitetura TCP/IP</a></li>
+              <li><a href="#" onclick="changeContent('Ameaças e vulnerabilidades')">Ameaças e vulnerabilidades</a></li>
+              <li><a href="#" onclick="changeContent('Conceitos básicos de política de segurança')">Conceitos básicos de política de segurança</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+      function changeContent(contentType) {
+        var contentBox = document.getElementById('main-content');
+
+        switch (contentType) {
+          case 'Conceitos fundamentais de segurança cibernética':
+            contentBox.innerHTML = `
+              <h2>Conceitos fundamentais de segurança cibernética</h2>
+              <p>Este tópico aborda os princípios básicos e fundamentais da segurança cibernética, incluindo conceitos como confidencialidade, integridade, disponibilidade, autenticidade e não-repúdio.</p>
+            `;
+            break;
+
+          case 'Criptografia e certificados digitais':
+            contentBox.innerHTML = `
+              <h2>Criptografia e certificados digitais</h2>
+              <p>A criptografia é essencial para garantir a segurança das comunicações e dos dados na internet. Neste tópico, são explorados os princípios da criptografia, assim como o uso de certificados digitais para autenticação e segurança.</p>
+            `;
+            break;
+
+          case 'Aspectos de segurança da arquitetura TCP/IP':
+            contentBox.innerHTML = `
+              <h2>Aspectos de segurança da arquitetura TCP/IP</h2>
+              <p>A arquitetura TCP/IP é amplamente utilizada na internet e apresenta desafios de segurança. Neste tópico, são discutidos aspectos de segurança relacionados ao protocolo TCP/IP, como ataques de negação de serviço (DDoS), spoofing, entre outros.</p>
+            `;
+            break;
+
+          case 'Ameaças e vulnerabilidades':
+            contentBox.innerHTML = `
+              <h2>Ameaças e vulnerabilidades</h2>
+              <p>As ameaças cibernéticas estão em constante evolução e representam riscos para a segurança da informação. Neste tópico, são abordadas diferentes ameaças e vulnerabilidades, como malware, phishing, engenharia social, entre outras.</p>
+            `;
+            break;
+
+          case 'Conceitos básicos de política de segurança':
+            contentBox.innerHTML = `
+              <h2>Conceitos básicos de política de segurança</h2>
+              <p>Uma política de segurança define as diretrizes e práticas para proteger ativos de informação e garantir a segurança dos sistemas e dados. Neste tópico, são apresentados os conceitos básicos de elaboração e implementação de políticas de segurança.</p>
+            `;
+            break;
+
+          default:
+            break;
+        }
+      }
+    </script>
+  </section>
+
+  <footer><%- include('./partials/footer.ejs') %></footer>
+
+</body>
+
+</html>

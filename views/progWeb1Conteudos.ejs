@@ -1,0 +1,74 @@
+<link rel="stylesheet" href="/stylesheets/conteudo.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+  <%- include('./partials/navBarSemLogin.ejs') %>
+
+  <section>
+    <div class="container">
+      <div class="nome-disciplina" id="nome-da-disciplina">
+        <h3>Programação Web I</h3>
+      </div>
+
+      <div class="row">
+        <div class="col-md-7">
+          <div class="content-box first" id="main-content">
+            <div class="capa-disciplina">
+              <img src="/images/progWeb1.jpg" alt="Programação Web I">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <div class="content-box second">
+
+            <div class="titulo-conteudo">
+              <h3>Conteúdos</h3>
+            </div>
+
+            <ul>
+              <li><a href="#" onclick="changeContent('Desenvolver aplicações backend, utilizando a linguagem JavaScript e o framework NodeJS')">Desenvolver aplicações backend, utilizando a linguagem JavaScript e o framework NodeJS</a></li>
+              <li><a href="#" onclick="changeContent('Acessar serviços em nuvem hospedados em Functions ou no Realtime Database do Firebase e em Lambdas da AWS - Amazon Web Service')">Acessar serviços em nuvem hospedados em Functions ou no Realtime Database do Firebase e em Lambdas da AWS - Amazon Web Service</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+      function changeContent(contentType) {
+        var contentBox = document.getElementById('main-content');
+
+        switch (contentType) {
+          case 'Desenvolver aplicações backend, utilizando a linguagem JavaScript e o framework NodeJS':
+            contentBox.innerHTML = `
+              <h2>Desenvolver aplicações backend</h2>
+              <p>Este tópico aborda o desenvolvimento de aplicações backend utilizando JavaScript como linguagem de programação e o framework NodeJS. NodeJS é uma plataforma que permite executar JavaScript no servidor, facilitando a construção de aplicações web escaláveis e eficientes.</p>
+            `;
+            break;
+
+          case 'Acessar serviços em nuvem hospedados em Functions ou no Realtime Database do Firebase e em Lambdas da AWS - Amazon Web Service':
+            contentBox.innerHTML = `
+              <h2>Acessar serviços em nuvem</h2>
+              <p>Neste tópico, será explorado como acessar e utilizar serviços em nuvem hospedados em Functions ou no Realtime Database do Firebase, assim como em Lambdas da AWS (Amazon Web Service). Esses serviços oferecem funcionalidades poderosas para o desenvolvimento de aplicações web modernas e escaláveis.</p>
+            `;
+            break;
+
+          default:
+            break;
+        }
+      }
+    </script>
+  </section>
+
+  <footer><%- include('./partials/footer.ejs') %></footer>
+
+</body>
+
+</html>

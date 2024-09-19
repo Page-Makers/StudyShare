@@ -1,0 +1,57 @@
+  <link rel="stylesheet" href="/stylesheets/avaliacao.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  
+</head>
+<body>
+  <%- include('./partials/navBarSemLogin.ejs') %>
+    
+  <section>
+    <div class="container">
+      <div class="nome-disciplina" id="nome-da-disciplina">
+        <h3>Prática Profissional III</h3>
+      </div>
+      <div class="row">
+        <div class="col-md-7">
+          <div class="content-box first" id="main-content">
+            <div class="capa-disciplina">
+              <img src="/images/pp3.jpg" alt="Prática Profissional III">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="content-box second">
+            <div class="titulo-conteudo">
+              <h3>Avaliações</h3>
+            </div>
+            <ul>
+              <li><a href="javascript:void(0)" onclick="showPDF('/pdfs/testeAvaliacao.pdf', 'Avaliação 1')">Avaliação 1</a></li>
+              <li><a href="javascript:void(0)" onclick="showPDF('/pdfs/testeAvaliacao2.pdf', 'Avaliação 2')">Avaliação 2</a></li>
+              <li><a href="javascript:void(0)" onclick="showPDF('/pdfs/testeAvaliacao3.pdf', 'Avaliação 3')">Avaliação 3</a></li>
+              <li><a href="javascript:void(0)" onclick="showPDF('/pdfs/testeAvaliacao4.pdf', 'Avaliação 4')">Avaliação 4</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer><%- include('./partials/footer.ejs') %></footer>
+  <script>
+    function showPDF(pdfUrl, title) {
+      var contentBox = document.getElementById('main-content');
+      contentBox.innerHTML = '<div class="pdf-link" onclick="openPDF(\'' + pdfUrl + '\')">Clique aqui para abrir ' + title + ' (PDF)</div>';
+    }
+
+    function openPDF(pdfUrl) {
+      var confirmation = confirm('Deseja abrir o PDF em outra janela?');
+      if (confirmation) {
+        window.open(pdfUrl, '_blank');
+      }
+    }
+  </script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+    
+  </script>
+</body>
+</html>

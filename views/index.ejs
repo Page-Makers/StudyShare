@@ -1,0 +1,74 @@
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="./stylesheets/carrossel.css">
+<%- include('./partials/navBarSemLogin.ejs') %>
+
+</head>
+<body>
+  
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    
+    <div class="carousel-inner">
+      
+      <div class="carousel-item active">
+        <a href="/periodo/p1" target="_self">
+        <img class="d-block w-100" src="/images/P1img.jpg" alt="p1img">
+        </a>
+      </div>
+      
+      <div class="carousel-item">
+        <a href="/periodo/p2" target="_self">
+        <img class="d-block w-100" src="/images/P2img.jpg" alt="p2img">
+        </a>
+      </div>
+      
+      <div class="carousel-item">
+        <a href="/periodo/p3" target="_self">
+        <img class="d-block w-100" src="/images/P3img.jpg" alt="p3img">
+        </a>
+      </div>
+      
+      <div class="carousel-item">
+        <a href="/periodo/p4" target="_self">
+        <img class="d-block w-100" src="/images/P4img.jpg" alt="p4img">
+        </a>
+      </div>
+      
+      <div class="carousel-item">
+        <a href="/periodo/p5" target="_self">
+        <img class="d-block w-100" src="/images/P5img.jpg" alt="p5img">
+        </a>
+      </div>
+      
+      <div class="carousel-item">
+        <a href="/periodo/p6" target="_self">
+        <img class="d-block w-100" src="/images/P6img.jpg" alt="p6img">
+        </a>
+      </div>
+      
+    </div>
+
+    
+    <!-- Controles de navegação -->
+<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev"><img class="botao-carrossel" src="/images/anterior.png"></a>
+<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next"><img class="botao-carrossel" src="/images/proximo.png"></a>
+
+  </div>
+  
+  <!-- Scripts JavaScript -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script>
+    $('.carousel').carousel({
+      interval: 1000 // Tempo em milissegundos de cada img 
+    });
+  </script>
+
+</body>
+</html>
+
+</div>
+<section>
+  <%- include('./partials/footer.ejs') %>
+</section>
+</body>
+</html>

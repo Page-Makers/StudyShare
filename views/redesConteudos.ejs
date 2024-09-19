@@ -1,0 +1,106 @@
+<link rel="stylesheet" href="/stylesheets/conteudo.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+  <%- include('./partials/navBarSemLogin.ejs') %>
+
+  <section>
+    <div class="container">
+      <div class="nome-disciplina" id="nome-da-disciplina">
+        <h3>Redes de Computadores</h3>
+      </div>
+
+      <div class="row">
+        <div class="col-md-7">
+          <div class="content-box first" id="main-content">
+            <div class="capa-disciplina">
+              <img src="/images/redes.jpg" alt="Redes de Computadores">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <div class="content-box second">
+
+            <div class="titulo-conteudo">
+              <h3>Conteúdos</h3>
+            </div>
+
+            <ul>
+              <li><a href="#" onclick="changeContent('Modelo TCP/IP')">Modelo TCP/IP</a></li>
+              <li><a href="#" onclick="changeContent('Camada de aplicação: HTTP e DNS')">Camada de aplicação: HTTP e DNS</a></li>
+              <li><a href="#" onclick="changeContent('Camada de transporte e protocolos')">Camada de transporte e protocolos</a></li>
+              <li><a href="#" onclick="changeContent('Camada de Rede: atrasos, perdas, endereçamento (IPv4, IPv6, subredes e VLAN), roteamentona internet')">Camada de Rede: atrasos, perdas, endereçamento (IPv4, IPv6, subredes e VLAN), roteamentona internet</a></li>
+              <li><a href="#" onclick="changeContent('Tecnologias da camada de enlace')">Tecnologias da camada de enlace</a></li>
+              <li><a href="#" onclick="changeContent('Implantação e configuração de redes de computadores')">Implantação e configuração de redes de computadores</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+      function changeContent(contentType) {
+        var contentBox = document.getElementById('main-content');
+
+        switch (contentType) {
+          case 'Modelo TCP/IP':
+            contentBox.innerHTML = `
+              <h2>Modelo TCP/IP</h2>
+              <p>O modelo TCP/IP é uma abstração em camadas que descreve a comunicação de rede em termos de uma série de protocolos interconectados. Ele consiste em quatro camadas principais: aplicação, transporte, internet e acesso à rede.</p>
+            `;
+            break;
+
+          case 'Camada de aplicação: HTTP e DNS':
+            contentBox.innerHTML = `
+              <h2>Camada de aplicação: HTTP e DNS</h2>
+              <p>A camada de aplicação do modelo TCP/IP inclui protocolos como HTTP (Hypertext Transfer Protocol) para transferência de dados na World Wide Web, e DNS (Domain Name System) para tradução de nomes de domínio em endereços IP.</p>
+            `;
+            break;
+
+          case 'Camada de transporte e protocolos':
+            contentBox.innerHTML = `
+              <h2>Camada de transporte e protocolos</h2>
+              <p>A camada de transporte é responsável pela transferência de dados entre sistemas finais. Alguns protocolos comuns nesta camada são TCP (Transmission Control Protocol) e UDP (User Datagram Protocol).</p>
+            `;
+            break;
+
+          case 'Camada de Rede: atrasos, perdas, endereçamento (IPv4, IPv6, subredes e VLAN), roteamentona internet':
+            contentBox.innerHTML = `
+              <h2>Camada de Rede</h2>
+              <p>A camada de rede lida com o roteamento dos dados na rede, endereçamento IP (IPv4 e IPv6), sub-redes, VLANs (Virtual Local Area Networks), atrasos e perdas de pacotes, entre outros aspectos essenciais da comunicação de dados.</p>
+            `;
+            break;
+
+          case 'Tecnologias da camada de enlace':
+            contentBox.innerHTML = `
+              <h2>Tecnologias da camada de enlace</h2>
+              <p>A camada de enlace é responsável pela comunicação entre dispositivos na mesma rede física. Tecnologias comuns nesta camada incluem Ethernet, Wi-Fi, e protocolos como ARP (Address Resolution Protocol) e PPP (Point-to-Point Protocol).</p>
+            `;
+            break;
+
+          case 'Implantação e configuração de redes de computadores':
+            contentBox.innerHTML = `
+              <h2>Implantação e configuração de redes de computadores</h2>
+              <p>Este tópico abrange os processos envolvidos na implantação e configuração de redes de computadores, incluindo seleção de equipamentos de rede, configuração de roteadores e switches, e definição de políticas de segurança da rede.</p>
+            `;
+            break;
+
+          default:
+            break;
+        }
+      }
+    </script>
+  </section>
+
+  <footer><%- include('./partials/footer.ejs') %></footer>
+
+</body>
+
+</html>

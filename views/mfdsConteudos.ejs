@@ -1,0 +1,74 @@
+<link rel="stylesheet" href="/stylesheets/conteudo.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+  <%- include('./partials/navBarSemLogin.ejs') %>
+
+  <section>
+    <div class="container">
+      <div class="nome-disciplina" id="nome-da-disciplina">
+        <h3>Métodos e ferramentas para desenvolvimento de software</h3>
+      </div>
+
+      <div class="row">
+        <div class="col-md-7">
+          <div class="content-box first" id="main-content">
+            <div class="capa-disciplina">
+              <img src="/images/mfds.jpg" alt="Desenvolvimento de Software">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <div class="content-box second">
+
+            <div class="titulo-conteudo">
+              <h3>Conteúdos</h3>
+            </div>
+
+            <ul>
+              <li><a href="#" onclick="changeContent('Noções fundamentais do ciclo de desenvolvimento do software')">Noções fundamentais do ciclo de desenvolvimento do software</a></li>
+              <li><a href="#" onclick="changeContent('Métodos, ferramentas e frameworks usados no ambiente de produção de software')">Métodos, ferramentas e frameworks usados no ambiente de produção de software</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+      function changeContent(contentType) {
+        var contentBox = document.getElementById('main-content');
+
+        switch (contentType) {
+          case 'Noções fundamentais do ciclo de desenvolvimento do software':
+            contentBox.innerHTML = `
+              <h2>Noções fundamentais do ciclo de desenvolvimento do software</h2>
+              <p>O ciclo de desenvolvimento do software refere-se às etapas e processos envolvidos na criação de software, desde a concepção até a entrega e manutenção. Isso inclui atividades como análise de requisitos, design, implementação, testes e implantação.</p>
+            `;
+            break;
+
+          case 'Métodos, ferramentas e frameworks usados no ambiente de produção de software':
+            contentBox.innerHTML = `
+              <h2>Métodos, ferramentas e frameworks</h2>
+              <p>No ambiente de produção de software, uma variedade de métodos, ferramentas e frameworks são utilizados para facilitar o desenvolvimento, melhorar a qualidade e aumentar a produtividade. Isso inclui metodologias ágeis, ferramentas de controle de versão como Git, e frameworks como React, Angular, Django, entre outros.</p>
+            `;
+            break;
+
+          default:
+            break;
+        }
+      }
+    </script>
+  </section>
+
+  <footer><%- include('./partials/footer.ejs') %></footer>
+
+</body>
+
+</html>

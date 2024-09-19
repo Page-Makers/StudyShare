@@ -1,0 +1,106 @@
+<link rel="stylesheet" href="/stylesheets/conteudo.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+  <%- include('./partials/navBarSemLogin.ejs') %>
+
+  <section>
+    <div class="container">
+      <div class="nome-disciplina" id="nome-da-disciplina">
+        <h3>FUNDAMENTOS DE PROGRAMAÇÃO II</h3>
+      </div>
+
+      <div class="row">
+        <div class="col-md-7">
+          <div class="content-box first" id="main-content">
+            <div class="capa-disciplina">
+              <img src="/images/fundProg2.jpg" alt="Programação II">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <div class="content-box second">
+
+            <div class="titulo-conteudo">
+              <h3>Conteúdos</h3>
+            </div>
+
+            <ul>
+              <li><a href="#" onclick="changeContent('Estruturas de Controle de Fluxo: sequenciais (scanf, printf etc), e de decisão - seleção (if) e repetição (for, while, do-while)')">Estruturas de Controle de Fluxo: sequenciais (scanf, printf etc), e de decisão - seleção (if) e repetição (for, while, do-while)</a></li>
+              <li><a href="#" onclick="changeContent('Agregados homegêneos: Vetores e Matrizes')">Agregados homegêneos: Vetores e Matrizes</a></li>
+              <li><a href="#" onclick="changeContent('Modularização através de Funções')">Modularização através de Funções</a></li>
+              <li><a href="#" onclick="changeContent('Ponteiros')">Ponteiros</a></li>
+              <li><a href="#" onclick="changeContent('Listas Lineares')">Listas Lineares</a></li>
+              <li><a href="#" onclick="changeContent('Aplicações de Pilhas e Filas (com vetores)')">Aplicações de Pilhas e Filas (com vetores)</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+      function changeContent(contentType) {
+        var contentBox = document.getElementById('main-content');
+
+        switch (contentType) {
+          case 'Estruturas de Controle de Fluxo: sequenciais (scanf, printf etc), e de decisão - seleção (if) e repetição (for, while, do-while)':
+            contentBox.innerHTML = `
+              <h2>Estruturas de Controle de Fluxo</h2>
+              <p>As estruturas de controle de fluxo permitem a execução de instruções de forma condicional ou repetida em um programa. Isso inclui estruturas sequenciais, como scanf e printf, estruturas de decisão, como if, e estruturas de repetição, como for, while e do-while.</p>
+            `;
+            break;
+
+          case 'Agregados homegêneos: Vetores e Matrizes':
+            contentBox.innerHTML = `
+              <h2>Agregados homegêneos: Vetores e Matrizes</h2>
+              <p>Os vetores e matrizes são agregados homegêneos utilizados para armazenar coleções de elementos do mesmo tipo. Os vetores representam uma única dimensão de elementos, enquanto as matrizes representam múltiplas dimensões, como linhas e colunas.</p>
+            `;
+            break;
+
+          case 'Modularização através de Funções':
+            contentBox.innerHTML = `
+              <h2>Modularização através de Funções</h2>
+              <p>A modularização é o processo de dividir um programa em partes menores e independentes, chamadas de funções. As funções podem ser reutilizadas em diferentes partes do programa e ajudam a organizar e facilitar a manutenção do código.</p>
+            `;
+            break;
+
+          case 'Ponteiros':
+            contentBox.innerHTML = `
+              <h2>Ponteiros</h2>
+              <p>Os ponteiros são variáveis especiais que armazenam endereços de memória de outras variáveis. Eles são amplamente utilizados em linguagens de programação como C e C++ para manipulação direta de memória, alocação dinâmica e passagem de parâmetros por referência.</p>
+            `;
+            break;
+
+          case 'Listas Lineares':
+            contentBox.innerHTML = `
+              <h2>Listas Lineares</h2>
+              <p>As listas lineares são estruturas de dados que representam uma sequência ordenada de elementos, onde cada elemento está ligado ao próximo. Elas podem ser implementadas de várias formas, como listas ligadas e listas duplamente ligadas, e são utilizadas em uma variedade de aplicações.</p>
+            `;
+            break;
+
+          case 'Aplicações de Pilhas e Filas (com vetores)':
+            contentBox.innerHTML = `
+              <h2>Aplicações de Pilhas e Filas (com vetores)</h2>
+              <p>As pilhas e filas são estruturas de dados fundamentais que podem ser implementadas utilizando vetores. Elas têm diversas aplicações práticas, como a implementação de algoritmos de busca, ordenação e processamento de dados.</p>
+            `;
+            break;
+
+          default:
+            break;
+        }
+      }
+    </script>
+  </section>
+
+  <footer><%- include('./partials/footer.ejs') %></footer>
+
+</body>
+
+</html>

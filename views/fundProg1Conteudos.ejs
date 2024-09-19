@@ -1,0 +1,116 @@
+<link rel="stylesheet" href="/stylesheets/conteudo.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+  <%- include('./partials/navBarSemLogin.ejs') %>
+
+  <section>
+    <div class="container">
+      <div class="nome-disciplina" id="nome-da-disciplina">
+        <h3>FUNDAMENTOS DE PROGRAMAÇÃO I</h3>
+      </div>
+
+      <div class="row">
+        <div class="col-md-7">
+          <div class="content-box first" id="main-content">
+            <div class="capa-disciplina">
+              <img src="/images/fundProg1.jpg" alt="Algoritmos e Estruturas de Dados">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <div class="content-box second">
+
+            <div class="titulo-conteudo">
+              <h3>Conteúdos</h3>
+            </div>
+
+            <ul>
+              <li><a href="#" onclick="changeContent('Algoritmo sequencial: entrada, processamento e saída')">Algoritmo sequencial: entrada, processamento e saída</a></li>
+              <li><a href="#" onclick="changeContent('Variáveis: atribuição de valor, operações matemáticas básicas')">Variáveis: atribuição de valor, operações matemáticas básicas</a></li>
+              <li><a href="#" onclick="changeContent('Estruturas de decisão: seleção e repetição')">Estruturas de decisão: seleção e repetição</a></li>
+              <li><a href="#" onclick="changeContent('Vetores: ordenação e pesquisa')">Vetores: ordenação e pesquisa</a></li>
+              <li><a href="#" onclick="changeContent('Strings: definição; operação com caracteres; substrings; segmentação em listas (split, contagem e manipulação de elementos)')">Strings: definição; operação com caracteres; substrings; segmentação em listas (split, contagem e manipulação de elementos)</a></li>
+              <li><a href="#" onclick="changeContent('Funções')">Funções</a></li>
+              <li><a href="#" onclick="changeContent('Pilhas e Filas')">Pilhas e Filas</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+      function changeContent(contentType) {
+        var contentBox = document.getElementById('main-content');
+
+        switch (contentType) {
+          case 'Algoritmo sequencial: entrada, processamento e saída':
+            contentBox.innerHTML = `
+              <h2>Algoritmo sequencial: entrada, processamento e saída</h2>
+              <p>Um algoritmo sequencial consiste em uma série de passos que são executados em sequência, onde há uma entrada de dados, processamento desses dados e saída do resultado.</p>
+              <p>Por exemplo, um algoritmo para calcular a média de três números fornecidos como entrada, onde os passos incluem a leitura dos números, o cálculo da média e a exibição do resultado.</p>
+            `;
+            break;
+
+          case 'Variáveis: atribuição de valor, operações matemáticas básicas':
+            contentBox.innerHTML = `
+              <h2>Variáveis: atribuição de valor, operações matemáticas básicas</h2>
+              <p>As variáveis são utilizadas para armazenar dados que podem ser modificados durante a execução do programa. Elas podem receber valores através de atribuição e serem utilizadas em operações matemáticas básicas, como adição, subtração, multiplicação e divisão.</p>
+            `;
+            break;
+
+          case 'Estruturas de decisão: seleção e repetição':
+            contentBox.innerHTML = `
+              <h2>Estruturas de decisão: seleção e repetição</h2>
+              <p>As estruturas de decisão permitem que o programa tome diferentes caminhos de execução com base em condições lógicas. Isso inclui estruturas de seleção, como if-else e switch-case, e estruturas de repetição, como while, do-while e for.</p>
+            `;
+            break;
+
+          case 'Vetores: ordenação e pesquisa':
+            contentBox.innerHTML = `
+              <h2>Vetores: ordenação e pesquisa</h2>
+              <p>Os vetores, também conhecidos como arrays, são estruturas de dados que permitem armazenar uma coleção de elementos do mesmo tipo. Eles podem ser ordenados para facilitar a busca por elementos específicos, e diferentes algoritmos podem ser aplicados para ordenação e pesquisa eficientes.</p>
+            `;
+            break;
+
+          case 'Strings: definição; operação com caracteres; substrings; segmentação em listas (split, contagem e manipulação de elementos)':
+            contentBox.innerHTML = `
+              <h2>Strings: definição; operação com caracteres; substrings; segmentação em listas (split, contagem e manipulação de elementos)</h2>
+              <p>As strings são sequências de caracteres que representam texto em linguagens de programação. Elas podem ser manipuladas através de operações como concatenação, busca por substrings e segmentação em listas de caracteres.</p>
+            `;
+            break;
+
+          case 'Funções':
+            contentBox.innerHTML = `
+              <h2>Funções</h2>
+              <p>As funções são blocos de código reutilizáveis que realizam uma tarefa específica. Elas podem receber parâmetros como entrada, realizar processamento e retornar um resultado. O uso de funções promove a modularidade e a reutilização de código em programas.</p>
+            `;
+            break;
+
+          case 'Pilhas e Filas':
+            contentBox.innerHTML = `
+              <h2>Pilhas e Filas</h2>
+              <p>As pilhas e filas são estruturas de dados utilizadas para armazenar e manipular elementos de uma maneira específica. Uma pilha segue o princípio de last-in, first-out (LIFO), onde o último elemento adicionado é o primeiro a ser removido. Já uma fila segue o princípio de first-in, first-out (FIFO), onde o primeiro elemento adicionado é o primeiro a ser removido.</p>
+<p>Essas estruturas são frequentemente utilizadas em algoritmos para modelar situações como a execução de operações reversíveis (pilha) ou o processamento de tarefas em ordem de chegada (fila).</p>
+`;
+break;
+
+default:
+break;
+}
+}
+</script>
+</section>
+
+<footer><%- include('./partials/footer.ejs') %></footer>
+
+</body>
+
+</html>
