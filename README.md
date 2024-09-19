@@ -1,8 +1,13 @@
 <div  align="center">
 <br><img src="https://github.com/Page-Makers/StudyShare/blob/main/Design/imagens/logo.png"  height= "100px" width="400px"/><br><br><br>
-<img src="https://github.com/Page-Makers/StudyShare/blob/main/Design/imagens/index.png"  height= "550px" width="1550px"/><br><br>
-<img src="https://github.com/Page-Makers/StudyShare/blob/main/Design/imagens/disciplinas.png"  height= "550px" width="1550px"/><br><br>
-<img src="https://github.com/Page-Makers/StudyShare/blob/main/Design/imagens/conteudos.png"  height= "550px" width="1550px"/><br><br>
+<img src="https://github.com/Page-Makers/StudyShare/blob/main/Design/imagens/index.png"  height= "550px" width="1600px"/><br><br>
+<img src="https://github.com/Page-Makers/StudyShare/blob/main/Design/imagens/disciplinas.png"  height= "550px" width="1600px"/><br><br>
+<img src="https://github.com/Page-Makers/StudyShare/blob/main/Design/imagens/periodos.png"  height= "550px" width="1600px"/><br><br>
+<img src="https://github.com/Page-Makers/StudyShare/blob/main/Design/imagens/disciplinasPeriodo.png"  height= "550px" width="1600px"/><br><br>
+<img src="https://github.com/Page-Makers/StudyShare/blob/main/Design/imagens/materiais.png"  height= "550px" width="1600px"/><br><br>
+<img src="https://github.com/Page-Makers/StudyShare/blob/main/Design/imagens/conteudos.png"  height= "550px" width="1600px"/><br><br>
+<img src="https://github.com/Page-Makers/StudyShare/blob/main/Design/imagens/enviarMaterial.png"  height= "550px" width="1600px"/><br><br>
+
 </div>
 <section>
 <h2>🔎 Sobre o Projeto</h2>
