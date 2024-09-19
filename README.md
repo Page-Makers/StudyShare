@@ -1,5 +1,8 @@
 <div  align="center">
-<img src="https://github.com/Page-Makers/StudyShare/blob/main/Design/Logo/Logo/Vers%C3%A3o%201/Logo.png"  height= "550px" width="550px"/><br><br>
+<br><img src="https://github.com/Page-Makers/StudyShare/blob/main/Design/imagens/logo.png"  height= "100px" width="400px"/><br><br><br>
+<img src="https://github.com/Page-Makers/StudyShare/blob/main/Design/imagens/index.png"  height= "550px" width="1550px"/><br><br>
+<img src="https://github.com/Page-Makers/StudyShare/blob/main/Design/imagens/disciplinas.png"  height= "550px" width="1550px"/><br><br>
+<img src="https://github.com/Page-Makers/StudyShare/blob/main/Design/imagens/conteudos.png"  height= "550px" width="1550px"/><br><br>
 </div>
 <section>
 <h2>🔎 Sobre o Projeto</h2>
