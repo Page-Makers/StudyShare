@@ -20,7 +20,6 @@
 <li>Geissy Kelly Nascimento Neves</li>
 <li>Jadise Lane Silva dos Santos</li>
 <li>Larissa dos Santos Holanda</li>
-<li>Michael Gentil Alexandre</li>
 </ul>
 </details>
 
